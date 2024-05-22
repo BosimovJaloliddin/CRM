@@ -4,6 +4,9 @@ const Container = styled.div`
   display: flex;
 `;
 const Side = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   max-width: 280px;
   min-width: 280px;
@@ -13,7 +16,6 @@ const Side = styled.div`
   &::-webkit-scrollbar {
     width: 0;
   }
-  border: 2px solid red;
 `;
 const Body = styled.div`
   flex: 1;
@@ -23,5 +25,62 @@ const Wrapper = styled.div`
   background-color: white;
   border: 2px solid blue;
 `;
+const Logo = styled.div`
+  position: sticky;
+  top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: rgba(24, 144, 255, 1);
+  padding: 16px 24px;
+  background-color: white;
+  border-bottom: 1px solid rgb(248, 250, 252, 1);
+  cursor: pointer;
+`;
+const LogOut = styled(Logo)`
+  border-bottom: 0;
+  border-top: 1px solid rgb(248, 250, 252, 1);
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+`;
 
-export { Container, Side, Body, Wrapper };
+// PROFILE
+
+const ProfileContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 23px 24px 32px 24px;
+`;
+
+ProfileContainer.Image = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+`;
+ProfileContainer.Name = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--primaryColor);
+
+  width: 168px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+ProfileContainer.Email = styled.p`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--secondaryColor);
+
+  width: 168px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export { Container, Side, Body, Wrapper, Logo, LogOut, ProfileContainer };
