@@ -10,13 +10,16 @@ const Sidebar = () => {
   const onClickLogo = () => {
     navigate("/");
   };
+  const onClickLogOut = () => {
+    navigate("/");
+  };
   return (
     <Container>
-      <Side onClick={onClickLogo}>
-        <Logo>CRM</Logo>
+      <Side>
+        <Logo onClick={onClickLogo}>CRM</Logo>
         <Profile />
 
-        <LogOut>Chiqish</LogOut>
+        <LogOut onClick={onClickLogOut}>Chiqish</LogOut>
       </Side>
       <Body>
         <Navbar />
