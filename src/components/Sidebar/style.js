@@ -1,4 +1,13 @@
 import styled from "styled-components";
+import arrow from "../../assets/icons/rightArrow.svg?react";
+
+const Arrow = styled(arrow)`
+  display: flex;
+  margin-left: auto;
+  transition: all 0.1s;
+
+  transform: ${({ active }) => active && "rotate(90deg)"};
+`;
 
 const Container = styled.div`
   display: flex;
@@ -83,4 +92,52 @@ ProfileContainer.Email = styled.p`
   text-overflow: ellipsis;
 `;
 
-export { Container, Side, Body, Wrapper, Logo, LogOut, ProfileContainer };
+// MENU
+
+const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const MenuItem = styled.div`
+  display: flex;
+`;
+
+MenuItem.Title = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--primaryColor);
+  cursor: pointer;
+  padding: 12px 24px;
+
+  &:hover {
+    background-color: rgba(248, 250, 252, 1);
+    color: var(--activeColor);
+    path {
+      fill: var(--activeColor);
+    }
+  }
+`;
+const ChildWrapper = styled.div`
+  height: ${({ active }) => (active ? "auto" : "0")};
+  overflow: hidden;
+  margin-left: 36px;
+`;
+
+export {
+  Arrow,
+  Container,
+  ChildWrapper,
+  MenuItem,
+  Side,
+  Body,
+  Wrapper,
+  Logo,
+  LogOut,
+  ProfileContainer,
+  Menu,
+};
