@@ -1,12 +1,14 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import arrow from "../../assets/icons/rightArrow.svg?react";
+import exitIcon from "../../assets/icons/exit.svg?react";
 
 const Arrow = styled(arrow)`
   display: flex;
   margin-left: auto;
   transition: all 0.1s;
 
-  transform: ${({ active }) => active && "rotate(90deg)"};
+  transform: ${({ active }) => active === "true" && "rotate(90deg)"};
 `;
 
 const Container = styled.div`
@@ -47,11 +49,17 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 const LogOut = styled(Logo)`
+  display: flex;
+  align-items: center;
   border-bottom: 0;
   border-top: 1px solid rgb(248, 250, 252, 1);
   position: sticky;
   bottom: 0;
   margin-top: auto;
+`;
+
+const ExitIcon = styled(exitIcon)`
+  margin-right: 16px;
 `;
 
 // PROFILE
@@ -98,8 +106,15 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const MenuItem = styled.div`
+const MenuItem = styled(NavLink)`
   display: flex;
+  text-decoration: none;
+  color: var(--primaryColor);
+
+  background-color: ${({ active }) =>
+    active === "true" ? " rgba(248, 250, 252, 1)" : "inherit"};
+  color: ${({ active }) =>
+    active === "true" ? "var(--activeColor)" : "var(--primaryColor)"};
 `;
 
 MenuItem.Title = styled.div`
@@ -110,7 +125,6 @@ MenuItem.Title = styled.div`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: var(--primaryColor);
   cursor: pointer;
   padding: 12px 24px;
 
@@ -121,9 +135,14 @@ MenuItem.Title = styled.div`
       fill: var(--activeColor);
     }
   }
+
+  path {
+    fill: ${({ active }) =>
+      active === "true" ? "var(--activeColor)" : "var(--primaryColor)"};
+  }
 `;
 const ChildWrapper = styled.div`
-  height: ${({ active }) => (active ? "auto" : "0")};
+  height: ${({ active }) => (active === "true" ? "auto" : "0")};
   overflow: hidden;
   margin-left: 36px;
 `;
@@ -138,6 +157,7 @@ export {
   Wrapper,
   Logo,
   LogOut,
+  ExitIcon,
   ProfileContainer,
   Menu,
 };
