@@ -21,14 +21,29 @@ const Root = () => {
             });
           } else
             return (
-              <Route
-                key={parent.id}
-                path={parent.path}
-                element={<ParentElement />}
-              />
+              !parent?.hidden && (
+                <Route
+                  key={parent.id}
+                  path={parent.path}
+                  element={<ParentElement />}
+                />
+              )
             );
         })}
       </Route>
+
+      {sidebar.map((parent) => {
+        const ParentElement = parent.element;
+        return (
+          parent?.hidden && (
+            <Route
+              key={parent.id}
+              path={parent.path}
+              element={<ParentElement />}
+            />
+          )
+        );
+      })}
       <Route path="/" element={<Navigate to={"/analitika"} />} />
       <Route path="*" element={<h1>NOT FOUND 404</h1>} />
     </Routes>
