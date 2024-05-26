@@ -1,7 +1,14 @@
-import { Container } from "./style";
+import { Container, Input, InputWrapper, SearchIcon } from "./style";
 
 const Navbar = () => {
-  return <Container>Navbar</Container>;
+  return (
+    <Container>
+      <InputWrapper>
+        <SearchIcon />
+        <Input placeholder="Search" />
+      </InputWrapper>
+    </Container>
+  );
 };
 
 export default Navbar;
