@@ -1,3 +1,4 @@
+import DateTimePicers from "./DateTimePicers";
 import GenericSelect from "./Select";
 import Time from "./Time";
 import { Container, Input, InputWrapper, SearchIcon, Section } from "./style";
@@ -11,7 +12,7 @@ const Navbar = () => {
       </InputWrapper>
       <Section>
         <Time />
-        <GenericSelect />
+        <DateTimePicers />
         <GenericSelect />
       </Section>
     </Container>
