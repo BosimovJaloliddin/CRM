@@ -3,6 +3,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import moment from "moment";
 
+console.log(moment());
+
 const DateTimePicers = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -10,7 +12,7 @@ const DateTimePicers = () => {
         sx={{ width: "150px", minWidth: "120px" }}
         label="Date"
         defaultValue={moment()}
-        views={["year", "month", "day"]}
+        views={["day", "month", "year"]}
         slotProps={{ textField: { size: "small" } }}
       />
     </LocalizationProvider>
