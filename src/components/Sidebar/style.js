@@ -29,6 +29,9 @@ const Side = styled.div`
   }
 `;
 const Body = styled.div`
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
   flex: 1;
 `;
 const Wrapper = styled.div`
@@ -47,6 +50,7 @@ const Logo = styled.div`
   background-color: white;
   border-bottom: 1px solid rgb(248, 250, 252, 1);
   cursor: pointer;
+  z-index: 999;
 `;
 const LogOut = styled(Logo)`
   display: flex;
