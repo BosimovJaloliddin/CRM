@@ -36,8 +36,9 @@ const Body = styled.div`
 `;
 const Wrapper = styled.div`
   margin: 16px;
+  padding: 20px;
   background-color: white;
-  border: 2px solid blue;
+  border-radius: 8px;
 `;
 const Logo = styled.div`
   position: sticky;
