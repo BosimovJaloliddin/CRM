@@ -36,7 +36,6 @@ const Body = styled.div`
 `;
 const Wrapper = styled.div`
   margin: 16px;
-  padding: 20px;
   background-color: white;
   border-radius: 8px;
 `;

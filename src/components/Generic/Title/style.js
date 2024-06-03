@@ -7,7 +7,7 @@ const Container = styled.div`
   font-weight: ${({ type }) => (!type || type === "primary" ? 600 : 400)};
   line-height: 28px;
   text-align: left;
-  color: var(--primaryColor);
+  color: ${({ color }) => (color ? color : "var(--primaryColor)")};
 
   margin-top: ${({ mt }) => getValue(mt)};
   margin-left: ${({ ml }) => getValue(ml)};

@@ -1,4 +1,4 @@
-import { privateData } from "../../utils/analitics";
+import { media, privateData } from "../../utils/analitics";
 import Subtitle from "../Generic/Subtitle";
 import Title from "../Generic/Title";
 import {
@@ -9,6 +9,7 @@ import {
   Plus,
   Section,
   SectionWrap,
+  SubCard,
   Wrapper,
 } from "./style";
 
@@ -45,10 +46,29 @@ const Analitika = () => {
         Ijtimoiy tarmoqlar
       </Subtitle>
       <Wrapper>
-        <Card>1</Card>
-        <Card>2</Card>
-        <Card>3</Card>
-        <Card>4</Card>
+        {media.map((value) => {
+          const { icon: Icon } = value;
+          return (
+            <SubCard key={value.id} gap={24}>
+              {/* TOP */}
+              <Section>
+                <SectionWrap>
+                  <Icon className={"subicon"} />
+                  <Subtitle>{value.title}</Subtitle>
+                </SectionWrap>
+                {/* <Plus title={value.title} /> */}
+              </Section>
+              {/* BOTTOM */}
+              <Section>
+                <SectionWrap>
+                  <Arrow />
+                  <Title color={"#52c41a"}>22%</Title>
+                </SectionWrap>
+                <Count>{value.count}K</Count>
+              </Section>
+            </SubCard>
+          );
+        })}
       </Wrapper>
     </Container>
   );

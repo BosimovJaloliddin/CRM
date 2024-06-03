@@ -26,7 +26,9 @@ const getColor = (title) => {
   }
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 24px;
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -60,6 +62,9 @@ const SectionWrap = styled.div`
     border-radius: 6px;
     background-color: ${({ title }) => getColor(title)?.primary};
   }
+  .subicon {
+    margin-right: 16px;
+  }
 `;
 const Plus = styled.div`
   &::before {
@@ -91,4 +96,19 @@ const Arrow = styled(arrowUp)`
   margin-right: 13px;
 `;
 
-export { Container, Wrapper, Card, Section, SectionWrap, Plus, Count, Arrow };
+const SubCard = styled(Card)`
+  padding-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(240, 240, 240, 1);
+`;
+export {
+  Container,
+  Wrapper,
+  Card,
+  Section,
+  SectionWrap,
+  Plus,
+  Count,
+  Arrow,
+  SubCard,
+};
