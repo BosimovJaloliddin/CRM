@@ -2,11 +2,13 @@ import styled from "styled-components";
 import getValue from "../../../hooks/getStyleValue";
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
   font-family: Montserrat;
   font-size: 16px;
   font-weight: 500px;
   line-height: 24px;
-  color: var(--primaryColor);
+  color: ${({ color }) => (color ? color : "var(--primaryColor)")};
 
   margin-top: ${({ mt }) => getValue(mt)};
   margin-left: ${({ ml }) => getValue(ml)};
@@ -17,5 +19,21 @@ const Container = styled.div`
   padding-right: ${({ pr }) => getValue(pr)};
   padding-bottom: ${({ pb }) => getValue(pb)};
 `;
+const Count = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 
-export { Container };
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 50%;
+  margin-left: 8px;
+  color: white;
+  background-color: var(--activeColor);
+`;
+
+export { Container, Count };

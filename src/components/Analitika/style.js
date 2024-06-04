@@ -29,7 +29,6 @@ const getColor = (title) => {
 const Container = styled.div`
   padding: 24px;
 `;
-
 const Wrapper = styled.div`
   display: flex;
   gap: ${({ gap }) => getValue(gap, "16px")};
@@ -95,11 +94,22 @@ const Arrow = styled(arrowUp)`
   height: 24px;
   margin-right: 13px;
 `;
-
 const SubCard = styled(Card)`
   padding-bottom: 24px;
   border-radius: 8px;
   border: 1px solid rgba(240, 240, 240, 1);
+`;
+
+const FooterWrapper = styled.div`
+  display: flex;
+  gap: 17px;
+  flex: 1;
+`;
+FooterWrapper.Email = styled.div`
+  flex: 2;
+`;
+FooterWrapper.Moliya = styled.div`
+  flex: 1;
 `;
 export {
   Container,
@@ -111,4 +121,5 @@ export {
   Count,
   Arrow,
   SubCard,
+  FooterWrapper,
 };
