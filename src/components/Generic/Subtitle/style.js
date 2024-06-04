@@ -5,11 +5,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   font-family: Montserrat;
-  font-size: 16px;
   font-weight: 500px;
   line-height: 24px;
   color: ${({ color }) => (color ? color : "var(--primaryColor)")};
-
+  font-size: ${({ fs }) => getValue(fs, "16px")};
   margin-top: ${({ mt }) => getValue(mt)};
   margin-left: ${({ ml }) => getValue(ml)};
   margin-right: ${({ mr }) => getValue(mr)};

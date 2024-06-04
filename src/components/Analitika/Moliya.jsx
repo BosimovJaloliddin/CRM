@@ -1,7 +1,16 @@
-import { Wrapper } from "./moliyaStyle";
+import Subtitle from "../Generic/Subtitle";
+import { ArrowIcon, Fragment, Wrapper } from "./moliyaStyle";
 
 const Moliya = () => {
-  return <Wrapper>Moliya</Wrapper>;
+  return (
+    <Wrapper>
+      <Fragment>
+        <ArrowIcon left="true" />
+        <Subtitle>Iyun 05</Subtitle>
+        <ArrowIcon />
+      </Fragment>
+    </Wrapper>
+  );
 };
 
 export default Moliya;

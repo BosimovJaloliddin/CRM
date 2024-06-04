@@ -8,26 +8,38 @@ const Wrapper = styled.div`
 
 const Info = styled.div`
   display: flex;
+  align-items: center;
   border-radius: 8px;
   &:hover {
     background-color: #f0f5ff;
   }
 `;
 const Section = styled.div`
-  width: 33.3%;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: ${({ end }) => end && "flex-end"};
-  flex: 1;
   padding: 12px;
 
-  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primaryColor);
 `;
 Info.Img = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 24px;
   border-radius: 50%;
+`;
+Info.SMS = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primaryColor);
+
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export { Wrapper, Section, Info };

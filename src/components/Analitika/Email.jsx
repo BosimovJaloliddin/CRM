@@ -11,14 +11,14 @@ const Email = () => {
             <Section>
               <Info.Img src={value.src} />
               <div>
-                <Subtitle>{value.name}</Subtitle>
-                <Subtitle color={"var(--secondaryColor)"}>
+                <Subtitle fs={14}>{value.name}</Subtitle>
+                <Subtitle fs={14} color={"var(--secondaryColor)"}>
                   {value.status}
                 </Subtitle>
               </div>
             </Section>
-            <Section>{value.sms}</Section>
-            <Section end>{value.date}</Section>
+            <Info.SMS>{value.sms}</Info.SMS>
+            <Section end="true">{value.date}</Section>
           </Info>
         );
       })}

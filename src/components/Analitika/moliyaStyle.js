@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import arrow from "../../assets/icons/rightArrow.svg?react";
 
 const Wrapper = styled.div`
   padding: 24px;
@@ -6,4 +7,22 @@ const Wrapper = styled.div`
   border: 1px solid rgba(240, 240, 240, 1);
 `;
 
-export { Wrapper };
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Fragment = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const ArrowIcon = styled(arrow)`
+  transform: ${({ left }) => left && "rotate(180deg)"};
+  cursor: pointer;
+  &:active {
+    path {
+      fill: var(--primaryColor);
+    }
+  }
+`;
+
+export { Wrapper, Section, Fragment, ArrowIcon };

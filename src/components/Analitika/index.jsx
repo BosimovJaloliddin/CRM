@@ -86,7 +86,7 @@ const Analitika = () => {
         </FooterWrapper.Email>
         {/* Moliya */}
         <FooterWrapper.Moliya>
-          <Subtitle mt={24} mb={16} count={12}>
+          <Subtitle mt={24} mb={16}>
             Moliya
           </Subtitle>
           <Moliya />
