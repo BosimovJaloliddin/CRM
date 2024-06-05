@@ -5,8 +5,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   font-family: Montserrat;
-  font-weight: 500px;
   line-height: 24px;
+  font-weight: 500;
   color: ${({ color }) => (color ? color : "var(--primaryColor)")};
   font-size: ${({ fs }) => getValue(fs, "16px")};
   margin-top: ${({ mt }) => getValue(mt)};

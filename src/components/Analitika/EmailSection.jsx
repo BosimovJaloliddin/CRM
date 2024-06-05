@@ -2,7 +2,7 @@ import { email } from "../../mock/email";
 import Subtitle from "../Generic/Subtitle";
 import { Info, Section, Wrapper } from "./emailStyle";
 
-const Email = () => {
+const EmailSection = () => {
   return (
     <Wrapper>
       {email.map((value) => {
@@ -26,4 +26,4 @@ const Email = () => {
   );
 };
 
-export default Email;
+export default EmailSection;

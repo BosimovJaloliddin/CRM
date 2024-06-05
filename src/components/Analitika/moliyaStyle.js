@@ -7,13 +7,11 @@ const Wrapper = styled.div`
   border: 1px solid rgba(240, 240, 240, 1);
 `;
 
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 const Fragment = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: ${({ mt = 0, mr = 0, mb = 0, ml = 0 }) =>
+    `${mt}px ${mr}px ${mb}px ${ml}px`};
 `;
 const ArrowIcon = styled(arrow)`
   transform: ${({ left }) => left && "rotate(180deg)"};
@@ -25,4 +23,21 @@ const ArrowIcon = styled(arrow)`
   }
 `;
 
-export { Wrapper, Section, Fragment, ArrowIcon };
+const DateCard = styled.div`
+  width: 48px;
+  height: 72px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+
+  background-color: ${({ active }) =>
+    active ? "var(--activeColor)" : "white"};
+  border-radius: 24px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+`;
+
+export { Wrapper, Fragment, ArrowIcon, DateCard };

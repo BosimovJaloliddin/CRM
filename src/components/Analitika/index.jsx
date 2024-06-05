@@ -1,7 +1,7 @@
 import { media, privateData } from "../../utils/analitics";
 import Subtitle from "../Generic/Subtitle";
 import Title from "../Generic/Title";
-import Email from "./Email";
+import EmailSection from "./EmailSection";
 import Moliya from "./Moliya";
 import {
   Arrow,
@@ -82,7 +82,7 @@ const Analitika = () => {
           <Subtitle mt={24} mb={16} count={12}>
             Email
           </Subtitle>
-          <Email />
+          <EmailSection />
         </FooterWrapper.Email>
         {/* Moliya */}
         <FooterWrapper.Moliya>
