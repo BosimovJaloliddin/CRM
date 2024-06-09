@@ -56,6 +56,22 @@ const AllLids = () => {
       addedDate: "10.01.2024",
       moderator: "Farrux",
     },
+    {
+      id: 5,
+      name: "Feruz",
+      group: "Group 4",
+      date: "12.07.2024",
+      addedDate: "10.01.2024",
+      moderator: "Farrux",
+    },
+    {
+      id: 6,
+      name: "Feruz",
+      group: "Group 4",
+      date: "12.07.2024",
+      addedDate: "10.01.2024",
+      moderator: "Farrux",
+    },
   ];
   return (
     <div>
