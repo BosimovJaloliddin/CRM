@@ -7,9 +7,10 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
+// import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
+import Subtitle from "../Subtitle";
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, numSelected, rowCount, headCells } = props;
@@ -26,11 +27,15 @@ function EnhancedTableHead(props) {
             inputProps={{
               "aria-label": "select all desserts",
             }}
+            sx={{
+              color: "#BBC3CD",
+            }}
           />
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell key={headCell.id} align={"left"} padding={"normal"}>
-            <TableSortLabel>{headCell.label}</TableSortLabel>
+            <Subtitle color="var(--secondaryColor)">{headCell.label}</Subtitle>
+            {/* <TableSortLabel></TableSortLabel> */}
           </TableCell>
         ))}
       </TableRow>
@@ -106,11 +111,14 @@ function GenericTable(props) {
                         inputProps={{
                           "aria-labelledby": labelId,
                         }}
+                        sx={{
+                          color: "#BBC3CD",
+                        }}
                       />
                     </TableCell>
                     {headCells.map((val) => (
                       <TableCell align="left" key={val.id}>
-                        {row[val.id]}
+                        <Subtitle>{row[val.id]}</Subtitle>
                       </TableCell>
                     ))}
                   </TableRow>
