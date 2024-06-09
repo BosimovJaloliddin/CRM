@@ -23,7 +23,7 @@ const getColor = (title) => {
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   padding: 24px;
   margin-bottom: 32px;
   border-radius: 8px 8px 0 0;
