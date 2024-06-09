@@ -8,13 +8,13 @@ const Navbar = () => {
   return (
     <Container>
       <GenericInput
-        borderRadius={8}
+        borderradius={8}
         fontSize={14}
         fontWeight={500}
-        lineHeight={20}
+        lineheight={20}
         width={500}
         height={40}
-        iconLeft={<SearchIcon />}
+        iconleft={<SearchIcon />}
         placeholder="Search"
       />
       <Section>

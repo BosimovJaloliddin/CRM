@@ -2,10 +2,10 @@ import { Container, Input } from "./style";
 
 const GenericInput = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { iconLeft, iconRight } = props;
+  const { iconleft, iconRight } = props;
   return (
     <Container {...props}>
-      {iconLeft && iconLeft}
+      {iconleft && iconleft}
       <Input {...props} />
       {iconRight && iconRight}
     </Container>

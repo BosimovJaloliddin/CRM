@@ -10,7 +10,7 @@ const Container = styled.div`
   width: ${({ width }) => getValue(width)};
   height: ${({ height }) => getValue(height)};
   max-width: ${({ width }) => getValue(width)};
-  border-radius: ${({ borderRadius }) => getValue(borderRadius)};
+  border-radius: ${({ borderradius }) => getValue(borderradius)};
 `;
 
 const Input = styled.input`
@@ -24,7 +24,7 @@ const Input = styled.input`
   max-width: ${({ width }) => getValue(width)};
   font-size: ${({ fontSize }) => getValue(fontSize)};
   font-weight: ${({ fontWeight }) => getValue(fontWeight)};
-  line-height: ${({ lineHeight }) => getValue(lineHeight)};
+  line-height: ${({ lineheight }) => getValue(lineheight)};
   color: ${({ color }) => (color ? color : "#bbc3cd")};
   border-radius: ${({ borderRadius }) => getValue(borderRadius)};
 
