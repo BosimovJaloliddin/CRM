@@ -10,6 +10,7 @@ import Settings from "../assets/icons/setting.svg?react";
 // Components
 import { Generics } from "../view/Generic";
 import AnalitikaView from "../view/AnalitikaView";
+import AllLidsView from "../view/Lids/All";
 // import LidsAllView from "../views/LidsAll";
 // import FirstClassView from "../views/FirstClass";
 // import NewStudentsView from "../views/NewStudents";
@@ -41,7 +42,7 @@ const sidebar = [
         title: "Barcha Lidlar",
         path: "/lidlar/all-lids",
         isPrivate: true,
-        element: Generics,
+        element: AllLidsView,
         role: ["admin", "manager"],
       },
       {
