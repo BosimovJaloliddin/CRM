@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import BreadCrump from "../Generic/BreadCrump";
 import Profile from "./profile";
 import sidebar from "../../utils/sidebar";
 
@@ -36,7 +37,8 @@ const Sidebar = () => {
     navigate("/login");
   };
 
-  const onClickParent = ({ id, children, path }, e) => {
+  const onClickParent = ({ id, children, path, title }, e) => {
+    e.preventDefault();
     if (open.includes(id)) {
       const data = open.filter((val) => val !== id);
       localStorage.setItem("open", JSON.stringify(data));
@@ -47,9 +49,12 @@ const Sidebar = () => {
     }
 
     if (!children) {
-      e.preventDefault();
-      navigate(path);
+      navigate(path, { state: { parent: title } });
     }
+  };
+  const onClickChild = (parent, child, path, e) => {
+    e.preventDefault();
+    navigate(path, { state: { parent: parent, child: child } });
   };
   return (
     <Container>
@@ -81,6 +86,9 @@ const Sidebar = () => {
                   {parent?.children?.map((child) => {
                     return (
                       <MenuItem
+                        onClick={(e) =>
+                          onClickChild(parent.title, child.title, child.path, e)
+                        }
                         active={`${location.pathname === child.path}`}
                         to={child.path}
                         key={child.id}
@@ -103,6 +111,7 @@ const Sidebar = () => {
       <Body>
         <Navbar />
         <Wrapper>
+          <BreadCrump />
           <Outlet />
         </Wrapper>
       </Body>
