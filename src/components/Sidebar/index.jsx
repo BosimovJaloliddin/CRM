@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import BreadCrump from "../Generic/BreadCrump";
+// import BreadCrump from "../Generic/BreadCrump";
 import Profile from "./profile";
 import sidebar from "../../utils/sidebar";
 
@@ -111,7 +111,7 @@ const Sidebar = () => {
       <Body>
         <Navbar />
         <Wrapper>
-          <BreadCrump />
+          {/* <BreadCrump /> */}
           <Outlet />
         </Wrapper>
       </Body>

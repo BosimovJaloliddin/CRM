@@ -7,10 +7,8 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-// import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
-import Subtitle from "../Subtitle";
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, numSelected, rowCount, headCells } = props;
@@ -33,9 +31,13 @@ function EnhancedTableHead(props) {
           />
         </TableCell>
         {headCells.map((headCell) => (
-          <TableCell key={headCell.id} align={"left"} padding={"normal"}>
-            <Subtitle color="var(--secondaryColor)">{headCell.label}</Subtitle>
-            {/* <TableSortLabel></TableSortLabel> */}
+          <TableCell
+            sx={{ fontSize: "16px", color: "#929FAF", cursor: "pointer" }}
+            key={headCell.id}
+            align={"left"}
+            padding={"normal"}
+          >
+            {headCell.label}
           </TableCell>
         ))}
       </TableRow>
@@ -45,7 +47,7 @@ function EnhancedTableHead(props) {
 
 function GenericTable(props) {
   const [selected, setSelected] = React.useState([]);
-  const { headCells, rows } = props;
+  const { headCells, rows, open } = props;
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -79,6 +81,21 @@ function GenericTable(props) {
 
   return (
     <Box sx={{ width: "100%" }}>
+      <Box
+        sx={
+          open
+            ? { marginTop: "24px", marginBottom: "8px" }
+            : { overflow: "hidden", height: 0 }
+        }
+      >
+        <Table>
+          <TableBody>
+            <TableRow>
+              <TableCell sx={{ borderBottom: 0 }}>Filter</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Box>
       <Paper sx={{ width: "100%", mb: 2 }}>
         <TableContainer>
           <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle">
@@ -117,8 +134,16 @@ function GenericTable(props) {
                       />
                     </TableCell>
                     {headCells.map((val) => (
-                      <TableCell align="left" key={val.id}>
-                        <Subtitle>{row[val.id]}</Subtitle>
+                      <TableCell
+                        sx={{
+                          fontSize: "16px",
+                          fontWeight: 500,
+                          color: "#253E5F",
+                        }}
+                        align="left"
+                        key={val.id}
+                      >
+                        {row[val.id]}
                       </TableCell>
                     ))}
                   </TableRow>

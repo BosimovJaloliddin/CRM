@@ -30,3 +30,13 @@ export const Container = styled.div`
   background: ${({ title }) => getColor(title)};
 `;
 export const Arrow = styled(arrow)``;
+export const WrapperBtn = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+
+  button {
+    cursor: pointer;
+  }
+`;

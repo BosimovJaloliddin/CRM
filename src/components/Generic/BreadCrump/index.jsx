@@ -1,9 +1,10 @@
-import { Arrow, Container } from "./style";
+/* eslint-disable react/prop-types */
+import { Arrow, Container, WrapperBtn } from "./style";
 import Title from "../Title";
 import Subtitle from "../Subtitle";
 import { useLocation } from "react-router-dom";
 
-const BreadCrump = () => {
+const BreadCrump = (props) => {
   const location = useLocation();
 
   return location.pathname !== "/analitika" ? (
@@ -15,6 +16,7 @@ const BreadCrump = () => {
           <Subtitle>{location?.state?.child}</Subtitle>
         </>
       ) : null}
+      <WrapperBtn>{props?.children}</WrapperBtn>
     </Container>
   ) : null;
 };

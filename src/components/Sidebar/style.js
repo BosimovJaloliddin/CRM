@@ -30,7 +30,6 @@ const Side = styled.div`
 `;
 const Body = styled.div`
   height: 100vh;
-  /* overflow: hidden; */
   overflow-y: scroll;
   flex: 1;
 `;

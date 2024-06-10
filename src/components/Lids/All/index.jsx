@@ -1,6 +1,10 @@
+import { useState } from "react";
+import BreadCrump from "../../Generic/BreadCrump";
 import GenericTable from "../../Generic/Table";
+import { Container } from "./style";
 
 const AllLids = () => {
+  const [open, setOpen] = useState(true);
   const headCells = [
     {
       id: "name",
@@ -74,9 +78,13 @@ const AllLids = () => {
     },
   ];
   return (
-    <div>
-      <GenericTable headCells={headCells} rows={rows} />
-    </div>
+    <Container>
+      <BreadCrump>
+        <button onClick={() => setOpen(!open)}>Filter</button>
+        <button>Added</button>
+      </BreadCrump>
+      <GenericTable open={open} headCells={headCells} rows={rows} />
+    </Container>
   );
 };
 
