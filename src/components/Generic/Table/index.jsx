@@ -9,7 +9,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
-import GenericSelect from "../Select";
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, numSelected, rowCount, headCells } = props;
@@ -48,7 +47,7 @@ function EnhancedTableHead(props) {
 
 function GenericTable(props) {
   const [selected, setSelected] = React.useState([]);
-  const { headCells, rows, open } = props;
+  const { headCells, rows, open, children } = props;
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -60,6 +59,7 @@ function GenericTable(props) {
   };
 
   const handleClick = (event, id) => {
+    console.log("parent");
     const selectedIndex = selected.indexOf(id);
     let newSelected = [];
 
@@ -80,21 +80,6 @@ function GenericTable(props) {
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
-  // GenericSelect data
-  const data = [
-    {
-      value: "all",
-      title: "All",
-    },
-    {
-      value: "rus",
-      title: "Rus",
-    },
-    {
-      value: "eng",
-      title: "Eng",
-    },
-  ];
   return (
     <Box sx={{ width: "100%" }}>
       <Box
@@ -109,11 +94,7 @@ function GenericTable(props) {
             : { overflow: "hidden", height: 0 }
         }
       >
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
+        {children}
         {/* <Table>
           <TableBody>
             <TableRow>
@@ -176,7 +157,7 @@ function GenericTable(props) {
                         align="left"
                         key={val.id}
                       >
-                        {row[val.id]}
+                        {val.render ? val.render : row[val.id]}
                       </TableCell>
                     ))}
                   </TableRow>

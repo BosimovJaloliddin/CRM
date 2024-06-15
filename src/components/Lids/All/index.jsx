@@ -1,11 +1,20 @@
 import { useState } from "react";
 import BreadCrump from "../../Generic/BreadCrump";
 import GenericTable from "../../Generic/Table";
-import { Container } from "./style";
 import GenericButton from "../../Generic/Button";
+import GenericSelect from "../../Generic/Select";
+import { Action, Container } from "./style";
 
 const AllLids = () => {
   const [open, setOpen] = useState(true);
+  const onEdit = (e) => {
+    e.stopPropagation();
+    console.log("Edit");
+  };
+  const onMove = (e) => {
+    e.stopPropagation();
+    console.log("Move");
+  };
   const headCells = [
     {
       id: "name",
@@ -26,6 +35,16 @@ const AllLids = () => {
     {
       id: "moderator",
       label: "Moderator",
+    },
+    {
+      id: "action",
+      label: "",
+      render: (
+        <Action>
+          <Action.Edit onClick={onEdit} />
+          <Action.Move onClick={onMove} />
+        </Action>
+      ),
     },
   ];
   const rows = [
@@ -78,6 +97,20 @@ const AllLids = () => {
       moderator: "Farrux",
     },
   ];
+  const data = [
+    {
+      value: "all",
+      title: "All",
+    },
+    {
+      value: "rus",
+      title: "Rus",
+    },
+    {
+      value: "eng",
+      title: "Eng",
+    },
+  ];
   return (
     <Container>
       <BreadCrump>
@@ -87,7 +120,13 @@ const AllLids = () => {
         </GenericButton>
         <GenericButton type="add">Buyurtma qo’shish</GenericButton>
       </BreadCrump>
-      <GenericTable open={open} headCells={headCells} rows={rows} />
+      <GenericTable open={open} headCells={headCells} rows={rows}>
+        <GenericSelect data={data} />
+        <GenericSelect data={data} />
+        <GenericSelect data={data} />
+        <GenericSelect data={data} />
+        <GenericSelect data={data} />
+      </GenericTable>
     </Container>
   );
 };

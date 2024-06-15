@@ -17,14 +17,18 @@ const GenericSelect = (props) => {
       fullWidth
     >
       <Select
-        sx={{ color: "#929faf", borderColor: "#929faf" }}
+        sx={{ color: "#253E5F", borderColor: "#929faf", fontSize: "14px" }}
         labelId="demo-simple-select-label"
         id="demo-simple-select"
         value={defaultVal || "Select"}
         onChange={handleChange}
       >
         {data?.map((data) => (
-          <MenuItem key={data?.value} value={data?.value}>
+          <MenuItem
+            sx={{ fontSize: "14px", color: "#253E5F" }}
+            key={data?.value}
+            value={data?.value}
+          >
             {data?.title}
           </MenuItem>
         ))}
