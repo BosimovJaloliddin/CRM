@@ -3,7 +3,7 @@ import { FormControl, MenuItem, Select } from "@mui/material";
 import { useState } from "react";
 
 const GenericSelect = (props) => {
-  const { data } = props;
+  const { data, width } = props;
   const [defaultVal, setDefaultVal] = useState(
     props?.value || (data && data[0].value)
   );
@@ -12,7 +12,7 @@ const GenericSelect = (props) => {
   };
   return (
     <FormControl
-      sx={{ m: 1, minWidth: "120px", width: "150px" }}
+      sx={{ minWidth: "120px", width: width || "150px" }}
       size="small"
       fullWidth
     >

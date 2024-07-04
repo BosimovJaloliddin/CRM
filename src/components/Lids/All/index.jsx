@@ -4,7 +4,7 @@ import GenericTable from "../../Generic/Table";
 import GenericButton from "../../Generic/Button";
 import GenericSelect from "../../Generic/Select";
 import { Action, Container } from "./style";
-import Modal from "../../Generic/Modal";
+import AllLidsModal from "./modal";
 
 const AllLids = () => {
   const [open, setOpen] = useState(true);
@@ -113,15 +113,26 @@ const AllLids = () => {
       title: "Eng",
     },
   ];
+
+  const onToggleModal = () => {
+    setModal(!modalOpen);
+  };
+  const onSave = () => {
+    // setModal(!modalOpen);
+  };
   return (
     <Container>
       <BreadCrump>
-        <Modal open={modalOpen} onClose={setModal} />
+        <AllLidsModal
+          open={modalOpen}
+          onClose={onToggleModal}
+          onSave={onSave}
+        />
         <GenericButton type="import">Import</GenericButton>
         <GenericButton onClick={() => setOpen(!open)} type="filter">
           Filter
         </GenericButton>
-        <GenericButton onClick={() => setModal(!modalOpen)} type="add">
+        <GenericButton onClick={onToggleModal} type="add">
           Lid qo&apos;shish
         </GenericButton>
       </BreadCrump>

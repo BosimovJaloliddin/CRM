@@ -7,10 +7,11 @@ const Container = styled.div`
   flex: 1;
   border: 1px solid var(--secondaryColor);
 
-  width: ${({ width }) => getValue(width)};
-  height: ${({ height }) => getValue(height)};
+  min-width: ${({ width }) => getValue(width)};
   max-width: ${({ width }) => getValue(width)};
-  border-radius: ${({ borderradius }) => getValue(borderradius)};
+  height: ${({ height }) => getValue(height, "40px")};
+  max-width: ${({ width }) => getValue(width)};
+  border-radius: ${({ borderradius }) => getValue(borderradius, "4px")};
 `;
 
 const Input = styled.input`
@@ -20,13 +21,14 @@ const Input = styled.input`
   outline: none;
 
   width: ${({ width }) => getValue(width)};
-  height: ${({ height }) => getValue(height)};
+  height: ${({ height }) => getValue(height, "40px")};
   max-width: ${({ width }) => getValue(width)};
   font-size: ${({ fontSize }) => getValue(fontSize)};
-  font-weight: ${({ fontWeight }) => getValue(fontWeight)};
+  font-weight: ${({ fontWeight }) => fontWeight};
   line-height: ${({ lineheight }) => getValue(lineheight)};
-  color: ${({ color }) => (color ? color : "#bbc3cd")};
-  border-radius: ${({ borderRadius }) => getValue(borderRadius)};
+  color: ${({ color }) => (color ? color : "var(--primaryColor)")};
+  border-radius: ${({ borderRadius }) => getValue(borderRadius, "4px")};
+  padding-left: 8px;
 
   &::placeholder {
     font-size: ${({ placeholderStyle }) =>
