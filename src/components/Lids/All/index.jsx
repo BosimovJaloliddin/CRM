@@ -4,9 +4,11 @@ import GenericTable from "../../Generic/Table";
 import GenericButton from "../../Generic/Button";
 import GenericSelect from "../../Generic/Select";
 import { Action, Container } from "./style";
+import Modal from "../../Generic/Modal";
 
 const AllLids = () => {
   const [open, setOpen] = useState(true);
+  const [modalOpen, setModal] = useState(false);
   const onEdit = (e) => {
     e.stopPropagation();
     console.log("Edit");
@@ -114,11 +116,14 @@ const AllLids = () => {
   return (
     <Container>
       <BreadCrump>
+        <Modal open={modalOpen} onClose={setModal} />
         <GenericButton type="import">Import</GenericButton>
         <GenericButton onClick={() => setOpen(!open)} type="filter">
           Filter
         </GenericButton>
-        <GenericButton type="add">Buyurtma qo’shish</GenericButton>
+        <GenericButton onClick={() => setModal(!modalOpen)} type="add">
+          Lid qo&apos;shish
+        </GenericButton>
       </BreadCrump>
       <GenericTable open={open} headCells={headCells} rows={rows}>
         <GenericSelect data={data} />
