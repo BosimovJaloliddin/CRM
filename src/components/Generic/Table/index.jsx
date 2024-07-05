@@ -89,7 +89,7 @@ function GenericTable(props) {
                 marginTop: "24px",
                 marginBottom: "8px",
                 display: "flex",
-                justifyContent: "space-between",
+                gap: 5,
               }
             : { overflow: "hidden", height: 0 }
         }
