@@ -11,6 +11,7 @@ const Container = styled.div`
   padding: 0 16px 0 24px;
   height: 60px;
   background-color: #ffffff;
+  z-index: 99;
 `;
 
 const SearchIcon = styled(search)`

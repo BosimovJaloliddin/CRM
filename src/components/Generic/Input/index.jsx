@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Container, Input } from "./style";
 
 const GenericInput = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { iconleft, iconRight } = props;
   return (
     <Container {...props}>

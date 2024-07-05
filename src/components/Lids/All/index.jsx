@@ -9,9 +9,11 @@ import AllLidsModal from "./modal";
 const AllLids = () => {
   const [open, setOpen] = useState(true);
   const [modalOpen, setModal] = useState(false);
-  const onEdit = (e) => {
+  const [modalProps, setModalProps] = useState({});
+  const onEdit = (e, res) => {
     e.stopPropagation();
-    console.log("Edit");
+    setModalProps(res);
+    setModal(!modalOpen);
   };
   const onMove = (e) => {
     e.stopPropagation();
@@ -41,9 +43,9 @@ const AllLids = () => {
     {
       id: "action",
       label: "",
-      render: (
+      render: (res) => (
         <Action>
-          <Action.Edit onClick={onEdit} />
+          <Action.Edit onClick={(e) => onEdit(e, res)} />
           <Action.Move onClick={onMove} />
         </Action>
       ),
@@ -57,6 +59,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Jalol",
+      days: "toq kunlari",
+      level: "Junior",
     },
     {
       id: 2,
@@ -65,6 +69,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Ali",
+      days: "toq kunlari",
+      level: "Junior",
     },
     {
       id: 3,
@@ -73,6 +79,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Asad",
+      days: "toq kunlari",
+      level: "Junior",
     },
     {
       id: 4,
@@ -81,6 +89,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Farrux",
+      days: "toq kunlari",
+      level: "Junior",
     },
     {
       id: 5,
@@ -89,6 +99,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Farrux",
+      days: "toq kunlari",
+      level: "Junior",
     },
     {
       id: 6,
@@ -97,6 +109,8 @@ const AllLids = () => {
       date: "12.07.2024",
       addedDate: "10.01.2024",
       moderator: "Farrux",
+      days: "toq kunlari",
+      level: "Junior",
     },
   ];
   const data = [
@@ -116,6 +130,7 @@ const AllLids = () => {
 
   const onToggleModal = () => {
     setModal(!modalOpen);
+    setModalProps(null);
   };
   const onSave = () => {
     // setModal(!modalOpen);
@@ -127,6 +142,7 @@ const AllLids = () => {
           open={modalOpen}
           onClose={onToggleModal}
           onSave={onSave}
+          data={modalProps}
         />
         <GenericButton type="import">Import</GenericButton>
         <GenericButton onClick={() => setOpen(!open)} type="filter">

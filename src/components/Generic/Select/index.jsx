@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const GenericSelect = (props) => {
   const { data, width } = props;
+
   const [defaultVal, setDefaultVal] = useState(
     props?.value || (data && data[0].value)
   );

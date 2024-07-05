@@ -157,7 +157,7 @@ function GenericTable(props) {
                         align="left"
                         key={val.id}
                       >
-                        {val.render ? val.render : row[val.id]}
+                        {val.render ? val.render(row) : row[val.id]}
                       </TableCell>
                     ))}
                   </TableRow>
