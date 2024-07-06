@@ -13,6 +13,9 @@ import AnalitikaView from "../view/AnalitikaView";
 import AllLidsView from "../view/Lids/All";
 import FirstClassView from "../view/Lids/FirstClass";
 import NewClassView from "../view/Lids/NewClass";
+import AllStudentsView from "../view/Students/All";
+import ActiveStudentsView from "../view/Students/Active";
+import ArchiveStudentsView from "../view/Students/Archive";
 // import LidsAllView from "../views/LidsAll";
 // import FirstClassView from "../views/FirstClass";
 // import NewStudentsView from "../views/NewStudents";
@@ -92,7 +95,7 @@ const sidebar = [
         parentID: 4,
         path: "/talabalar/all-talabalar",
         isPrivate: true,
-        element: Generics,
+        element: AllStudentsView,
         role: ["admin", "manager"],
       },
       // {
@@ -110,7 +113,7 @@ const sidebar = [
         path: "/talabalar/active",
         parentID: 4,
         isPrivate: true,
-        element: Generics,
+        element: ActiveStudentsView,
         role: ["admin", "manager"],
       },
       {
@@ -119,7 +122,7 @@ const sidebar = [
         path: "/talabalar/archive",
         isPrivate: true,
         parentID: 4,
-        element: Generics,
+        element: ArchiveStudentsView,
         role: ["admin", "manager"],
       },
       // {
