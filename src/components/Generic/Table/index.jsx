@@ -32,7 +32,12 @@ function EnhancedTableHead(props) {
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
-            sx={{ fontSize: "16px", color: "#929FAF", cursor: "pointer" }}
+            sx={{
+              fontSize: "16px",
+              color: "#929FAF",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
             key={headCell.id}
             align={"left"}
             padding={"normal"}

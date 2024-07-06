@@ -109,7 +109,7 @@ const sidebar = [
       // },
       {
         id: `4-3`,
-        title: "Aktive",
+        title: "Aktiv",
         path: "/talabalar/active",
         parentID: 4,
         isPrivate: true,

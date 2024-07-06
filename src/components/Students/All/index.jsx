@@ -15,14 +15,53 @@ const AllStudents = () => {
     setModalProps(res);
     setModal(!modalOpen);
   };
-  const onMove = (e) => {
-    e.stopPropagation();
-    console.log("Move");
-  };
+  // const onMove = (e) => {
+  //   e.stopPropagation();
+  //   console.log("Move");
+  // };
   const headCells = [
     {
       id: "name",
       label: "O’quvchining ismi",
+    },
+    {
+      id: "completed",
+      label: "Status",
+      render: (res) => {
+        const active = res.completed;
+        return (
+          <span style={{ color: active ? "green" : "red" }}>
+            {active ? "Tugallangan" : "Tugallanmagan"}
+          </span>
+        );
+      },
+    },
+    {
+      id: "phone",
+      label: "Telefon raqam",
+    },
+    {
+      id: "balance",
+      label: "Balans",
+      render: (res) => {
+        const active = res.balance.includes("-");
+        return (
+          <span
+            style={{
+              background: active ? "red" : "green",
+              color: "white",
+              padding: "2px 8px",
+              borderRadius: "4px",
+            }}
+          >
+            {res?.balance}
+          </span>
+        );
+      },
+    },
+    {
+      id: "parent",
+      label: "Ota yoki onasining FIO",
     },
     {
       id: "group",
@@ -46,7 +85,7 @@ const AllStudents = () => {
       render: (res) => (
         <Action>
           <Action.Edit onClick={(e) => onEdit(e, res)} />
-          <Action.Move onClick={onMove} />
+          {/* <Action.Move onClick={onMove} /> */}
         </Action>
       ),
     },
@@ -61,6 +100,10 @@ const AllStudents = () => {
       moderator: "Jalol",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "200,000",
+      parent: "Qodirov Axmad",
+      completed: true,
     },
     {
       id: 2,
@@ -71,6 +114,10 @@ const AllStudents = () => {
       moderator: "Ali",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "-200,000",
+      parent: "Qodirov Axmad",
+      completed: false,
     },
     {
       id: 3,
@@ -81,6 +128,10 @@ const AllStudents = () => {
       moderator: "Asad",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "400,000",
+      parent: "Qodirov Axmad",
+      completed: false,
     },
     {
       id: 4,
@@ -91,6 +142,10 @@ const AllStudents = () => {
       moderator: "Farrux",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "-200,000",
+      parent: "Qodirov Axmad",
+      completed: true,
     },
     {
       id: 5,
@@ -101,6 +156,10 @@ const AllStudents = () => {
       moderator: "Farrux",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "-200,000",
+      parent: "Qodirov Axmad",
+      completed: false,
     },
     {
       id: 6,
@@ -111,6 +170,10 @@ const AllStudents = () => {
       moderator: "Farrux",
       days: "toq kunlari",
       level: "Junior",
+      phone: "+998 99 479 1909",
+      balance: "300,000",
+      parent: "Qodirov Axmad",
+      completed: true,
     },
   ];
   const data = [
