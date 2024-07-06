@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const SearchIcon = styled(search)`
-  margin: 0 16px;
+  margin: 0 8px 0 16px;
 `;
 
 const Section = styled.div`
