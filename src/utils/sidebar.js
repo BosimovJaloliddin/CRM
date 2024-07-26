@@ -16,6 +16,9 @@ import NewClassView from "../view/Lids/NewClass";
 import AllStudentsView from "../view/Students/All";
 import ActiveStudentsView from "../view/Students/Active";
 import ArchiveStudentsView from "../view/Students/Archive";
+import GuruhlarView from "../view/Guruhlar/Guruhlar";
+import ScheduleView from "../view/Guruhlar/Archive";
+import RoomsView from "../view/Guruhlar/Rooms";
 // import LidsAllView from "../views/LidsAll";
 // import FirstClassView from "../views/FirstClass";
 // import NewStudentsView from "../views/NewStudents";
@@ -151,7 +154,7 @@ const sidebar = [
         title: "Guruhlar",
         path: "/guruhlar/guruhlar",
         isPrivate: true,
-        element: Generics,
+        element: GuruhlarView,
         role: ["admin", "manager"],
       },
       {
@@ -160,7 +163,7 @@ const sidebar = [
         parentID: 5,
         path: "/guruhlar/jadval",
         isPrivate: true,
-        element: Generics,
+        element: ScheduleView,
         role: ["admin", "manager"],
       },
       {
@@ -169,7 +172,7 @@ const sidebar = [
         parentID: 5,
         path: "/guruhlar/xonalar",
         isPrivate: true,
-        element: Generics,
+        element: RoomsView,
         role: ["admin", "manager"],
       },
     ],
