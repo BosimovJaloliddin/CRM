@@ -83,7 +83,7 @@ function GenericTable(props) {
         selected.slice(selectedIndex + 1)
       );
     }
-    setSelected(newSelected);
+    checkbox && setSelected(newSelected);
   };
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
