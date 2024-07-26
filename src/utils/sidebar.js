@@ -17,7 +17,7 @@ import AllStudentsView from "../view/Students/All";
 import ActiveStudentsView from "../view/Students/Active";
 import ArchiveStudentsView from "../view/Students/Archive";
 import GuruhlarView from "../view/Guruhlar/Guruhlar";
-import ScheduleView from "../view/Guruhlar/Archive";
+// import ScheduleView from "../view/Guruhlar/Archive";
 import RoomsView from "../view/Guruhlar/Rooms";
 // import LidsAllView from "../views/LidsAll";
 // import FirstClassView from "../views/FirstClass";
@@ -157,15 +157,15 @@ const sidebar = [
         element: GuruhlarView,
         role: ["admin", "manager"],
       },
-      {
-        id: `5-2`,
-        title: "Dars Jadvali",
-        parentID: 5,
-        path: "/guruhlar/jadval",
-        isPrivate: true,
-        element: ScheduleView,
-        role: ["admin", "manager"],
-      },
+      // {
+      //   id: `5-2`,
+      //   title: "Dars Jadvali",
+      //   parentID: 5,
+      //   path: "/guruhlar/jadval",
+      //   isPrivate: true,
+      //   element: ScheduleView,
+      //   role: ["admin", "manager"],
+      // },
       {
         id: `5-3`,
         title: "Xonalar",

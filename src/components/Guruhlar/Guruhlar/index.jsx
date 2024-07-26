@@ -127,7 +127,7 @@ const Guruhlar = () => {
         />
 
         <GenericButton onClick={onToggleModal} type="add">
-          Lid qo&apos;shish
+          Guruh qo&apos;shish
         </GenericButton>
       </BreadCrump>
       <GenericTable
