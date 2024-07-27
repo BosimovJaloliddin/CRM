@@ -6,12 +6,16 @@ import { Action, Container } from "./style";
 import AllLidsModal from "./modal";
 
 const Guruhlar = () => {
+  // const [open, setOpen] = useState(true);
   const [modalOpen, setModal] = useState(false);
   const [modalProps, setModalProps] = useState({});
   const onEdit = (e, res) => {
     e.stopPropagation();
     setModalProps(res);
     setModal(!modalOpen);
+  };
+  const onDelete = (e) => {
+    e.stopPropagation();
   };
   // const onMove = (e) => {
   //   e.stopPropagation();
@@ -60,7 +64,7 @@ const Guruhlar = () => {
       render: (res) => (
         <Action>
           <Action.Edit onClick={(e) => onEdit(e, res)} />
-          <Action.Delete onClick={() => {}} />
+          <Action.Delete onClick={onDelete} />
           {/* <Action.Move onClick={onMove} /> */}
         </Action>
       ),
@@ -78,7 +82,7 @@ const Guruhlar = () => {
       completed: true,
     },
     {
-      id: 1,
+      id: 2,
       group: "Frontend",
       kurs: "JavaScript",
       start: "15:00",
@@ -88,7 +92,7 @@ const Guruhlar = () => {
       completed: true,
     },
     {
-      id: 1,
+      id: 3,
       group: "Frontend",
       kurs: "JavaScript",
       start: "15:00",
@@ -98,7 +102,7 @@ const Guruhlar = () => {
       completed: false,
     },
     {
-      id: 1,
+      id: 4,
       group: "Frontend",
       kurs: "JavaScript",
       start: "15:00",

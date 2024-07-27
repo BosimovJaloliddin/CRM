@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import edit from "../../../assets/icons/edit.svg?react";
-import del from "../../../assets/icons/delete.svg?react";
+import delIcon from "../../../assets/icons/delete.svg?react";
 
 const action = css`
   padding: 10px;
@@ -29,6 +29,6 @@ Action.Edit = styled(edit)`
 Action.Move = styled(edit)`
   ${action}
 `;
-Action.Delete = styled(del)`
+Action.Delete = styled(delIcon)`
   ${action}
 `;
