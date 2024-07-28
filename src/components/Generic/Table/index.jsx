@@ -43,7 +43,7 @@ function EnhancedTableHead(props) {
               whiteSpace: "nowrap",
             }}
             key={headCell.id}
-            align={"left"}
+            align={headCell?.align || "left"}
             padding={"normal"}
           >
             {headCell.label}
@@ -156,7 +156,7 @@ function GenericTable(props) {
                           fontWeight: 500,
                           color: "#253E5F",
                         }}
-                        align="left"
+                        align={val?.align || "left"}
                         key={val.id}
                       >
                         {val.render ? val.render(row) : row[val.id]}

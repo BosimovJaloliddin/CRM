@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 import edit from "../../../assets/icons/edit.svg?react";
 import del from "../../../assets/icons/delete.svg?react";
+import keldi from "../../../assets/icons/keldi.svg?react";
+import sababli from "../../../assets/icons/sababli.svg?react";
+import sababsiz from "../../../assets/icons/sababsiz.svg?react";
+import birinchi from "../../../assets/icons/birinchi.svg?react";
 
 const action = css`
   padding: 10px;
@@ -18,6 +22,12 @@ const action = css`
 
 const Container = styled.div``;
 
+const Icon = styled.div``;
+Icon.Keldi = styled(keldi)``;
+Icon.Sababli = styled(sababli)``;
+Icon.Sababsiz = styled(sababsiz)``;
+Icon.Birinchi = styled(birinchi)``;
+
 const Action = styled.div`
   display: flex;
   align-items: center;
@@ -31,4 +41,4 @@ Action.Delete = styled(del)`
   ${action}
 `;
 
-export { Container, Action };
+export { Container, Action, Icon };
