@@ -17,6 +17,8 @@ const getColor = (title) => {
       return "#FFF2E8";
     case "Moliya":
       return "#F0F5FF";
+    default:
+      return "#F0F5FF";
   }
 };
 

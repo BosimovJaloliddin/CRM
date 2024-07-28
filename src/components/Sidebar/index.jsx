@@ -89,7 +89,7 @@ const Sidebar = () => {
                         onClick={(e) =>
                           onClickChild(parent.title, child.title, child.path, e)
                         }
-                        active={`${location.pathname === child.path}`}
+                        active={`${location.pathname.includes(child.path)}`}
                         to={child.path}
                         key={child.id}
                       >

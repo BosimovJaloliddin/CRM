@@ -9,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
+import { useNavigate } from "react-router-dom";
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, numSelected, rowCount, headCells, checkbox } =
@@ -54,8 +55,9 @@ function EnhancedTableHead(props) {
 }
 
 function GenericTable(props) {
+  const { headCells, rows, open, children, checkbox = true, url } = props;
+  const navigate = useNavigate();
   const [selected, setSelected] = React.useState([]);
-  const { headCells, rows, open, children, checkbox = true } = props;
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -67,23 +69,26 @@ function GenericTable(props) {
   };
 
   const handleClick = (event, id) => {
-    console.log("parent");
-    const selectedIndex = selected.indexOf(id);
-    let newSelected = [];
+    if (checkbox) {
+      const selectedIndex = selected.indexOf(id);
+      let newSelected = [];
 
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, id);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
+      if (selectedIndex === -1) {
+        newSelected = newSelected.concat(selected, id);
+      } else if (selectedIndex === 0) {
+        newSelected = newSelected.concat(selected.slice(1));
+      } else if (selectedIndex === selected.length - 1) {
+        newSelected = newSelected.concat(selected.slice(0, -1));
+      } else if (selectedIndex > 0) {
+        newSelected = newSelected.concat(
+          selected.slice(0, selectedIndex),
+          selected.slice(selectedIndex + 1)
+        );
+      }
+      setSelected(newSelected);
+    } else {
+      url && navigate(url, { state: { parent: "Guruhlar", child: "Checked" } });
     }
-    checkbox && setSelected(newSelected);
   };
 
   const isSelected = (id) => selected.indexOf(id) !== -1;

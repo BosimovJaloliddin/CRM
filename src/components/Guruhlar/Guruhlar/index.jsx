@@ -2,8 +2,8 @@ import { useState } from "react";
 import BreadCrump from "../../Generic/BreadCrump";
 import GenericTable from "../../Generic/Table";
 import GenericButton from "../../Generic/Button";
-import { Action, Container } from "./style";
 import AllLidsModal from "./modal";
+import { Action, Container } from "./style";
 
 const Guruhlar = () => {
   // const [open, setOpen] = useState(true);
@@ -65,7 +65,6 @@ const Guruhlar = () => {
         <Action>
           <Action.Edit onClick={(e) => onEdit(e, res)} />
           <Action.Delete onClick={onDelete} />
-          {/* <Action.Move onClick={onMove} /> */}
         </Action>
       ),
     },
@@ -139,6 +138,7 @@ const Guruhlar = () => {
         headCells={headCells}
         rows={rows}
         checkbox={false}
+        url={"/guruhlar/guruhlar/checkin"}
       ></GenericTable>
     </Container>
   );

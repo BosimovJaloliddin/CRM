@@ -3,8 +3,8 @@ import BreadCrump from "../../Generic/BreadCrump";
 import GenericTable from "../../Generic/Table";
 import GenericButton from "../../Generic/Button";
 // import GenericSelect from "../../Generic/Select";
-import { Action, Container } from "./style";
 import AllLidsModal from "./modal";
+import { Action, Container } from "./style";
 
 const Rooms = () => {
   // const [open, setOpen] = useState(true);
@@ -15,9 +15,8 @@ const Rooms = () => {
     setModalProps(res);
     setModal(!modalOpen);
   };
-  // const onMove = (e) => {
+  // const onDelete = (e) => {
   //   e.stopPropagation();
-  //   console.log("Move");
   // };
   const headCells = [
     {
@@ -27,6 +26,19 @@ const Rooms = () => {
     {
       id: "capcity",
       label: "O'rinlar soni",
+    },
+
+    {
+      id: "wifi",
+      label: "WI-FI",
+    },
+    {
+      id: "monitor",
+      label: "Monitor",
+    },
+    {
+      id: "blackboard",
+      label: "Blackboard",
     },
     {
       id: "freetime",
@@ -59,31 +71,22 @@ const Rooms = () => {
       },
     },
     {
-      id: "wifi",
-      label: "WI-FI",
-    },
-    {
-      id: "monitor",
-      label: "Monitor",
-    },
-    {
-      id: "blackboard",
-      label: "Blackboard",
-    },
-    {
       id: "action",
       label: "",
-      render: (res) => (
-        <Action>
-          <Action.Edit onClick={(e) => onEdit(e, res)} />
-          <Action.Delete onClick={() => {}} />
-          {/* <Action.Move onClick={onMove} /> */}
-        </Action>
-      ),
+      render: (res) => {
+        return (
+          <Action>
+            <Action.Edit onClick={(e) => onEdit(e, res)} />
+            <Action.Delete onClick={() => {}} />
+            {/* <Action.Delete onClick={() => {}} /> */}
+          </Action>
+        );
+      },
     },
   ];
   const rows = [
     {
+      id: 1,
       rooms: "Frontend",
       capcity: "20",
       freetime: ["12:00~17:00", "20:00"],
@@ -92,6 +95,7 @@ const Rooms = () => {
       blackboard: "Bor",
     },
     {
+      id: 2,
       rooms: "Frontend",
       capcity: "20",
       freetime: ["12:00~17:00", "20:00"],
@@ -100,6 +104,7 @@ const Rooms = () => {
       blackboard: "Bor",
     },
     {
+      id: 3,
       rooms: "Frontend",
       capcity: "20",
       freetime: ["12:00~17:00", "20:00"],
