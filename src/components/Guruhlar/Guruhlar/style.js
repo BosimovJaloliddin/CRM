@@ -46,9 +46,11 @@ const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
+  left: ${({ x }) => x && `${x}px`};
+  top: ${({ y }) => y && `${y}px`};
   width: 200px;
-  height: 200px;
-  margin: 40px 0px 0px -70px;
+  max-height: 200px;
+  margin: 35px 0 0 -100px;
   background: white;
   border: 1px solid #f0f0f0;
   border-radius: 8px;
@@ -64,5 +66,18 @@ const ArrowModal = styled.div`
   border-color: #f0f0f0 #f0f0f0 transparent transparent;
   background-color: white;
 `;
+const ModalBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 18px 15px;
+  color: var(--primaryColor);
 
-export { Container, Action, Icon, ModalContainer, ArrowModal };
+  &:hover {
+    background-color: #f8fafc;
+  }
+`;
+
+export { Container, Action, Icon, ModalContainer, ArrowModal, ModalBox };
