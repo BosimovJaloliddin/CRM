@@ -30,7 +30,11 @@ const Side = styled.div`
 `;
 const Body = styled.div`
   height: 100vh;
+  min-width: calc(1440px - 480px);
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   flex: 1;
 `;
 const Wrapper = styled.div`

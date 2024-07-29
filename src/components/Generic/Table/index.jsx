@@ -94,7 +94,7 @@ function GenericTable(props) {
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={
           open
@@ -109,7 +109,7 @@ function GenericTable(props) {
       >
         {children}
       </Box>
-      <Paper sx={{ mb: 2 }}>
+      <Paper sx={{ width: "100%", mb: 2 }}>
         <TableContainer>
           <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle">
             <EnhancedTableHead

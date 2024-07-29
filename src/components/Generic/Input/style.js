@@ -7,8 +7,8 @@ const Container = styled.div`
   flex: 1;
   border: 1px solid var(--secondaryColor);
 
-  /* min-width: ${({ width }) => getValue(width)}; */
   max-width: ${({ width }) => getValue(width)};
+  min-width: ${({ width }) => getValue(width)};
   height: ${({ height }) => getValue(height, "40px")};
   border-radius: ${({ borderradius }) => getValue(borderradius, "4px")};
 `;
@@ -19,7 +19,7 @@ const Input = styled.input`
   border: 0;
   outline: none;
 
-  /* width: ${({ width }) => getValue(width)}; */
+  width: ${({ width }) => getValue(width)};
   height: ${({ height }) => getValue(height, "40px")};
   max-width: ${({ width }) => getValue(width)};
   font-size: ${({ fontSize }) => getValue(fontSize)};
