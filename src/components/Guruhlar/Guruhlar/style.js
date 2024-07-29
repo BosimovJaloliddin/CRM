@@ -41,4 +41,28 @@ Action.Delete = styled(del)`
   ${action}
 `;
 
-export { Container, Action, Icon };
+// STATUS MODAL
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin: 40px 0px 0px -70px;
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+`;
+const ArrowModal = styled.div`
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  align-self: center;
+  margin-top: -16px;
+  transform: rotate(-45deg);
+  border: 1px solid #f0f0f0;
+  border-color: #f0f0f0 #f0f0f0 transparent transparent;
+  background-color: white;
+`;
+
+export { Container, Action, Icon, ModalContainer, ArrowModal };
