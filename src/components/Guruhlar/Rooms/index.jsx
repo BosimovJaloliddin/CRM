@@ -27,19 +27,6 @@ const Rooms = () => {
       id: "capcity",
       label: "O'rinlar soni",
     },
-
-    {
-      id: "wifi",
-      label: "WI-FI",
-    },
-    {
-      id: "monitor",
-      label: "Monitor",
-    },
-    {
-      id: "blackboard",
-      label: "Blackboard",
-    },
     {
       id: "freetime",
       label: "Bo'sh vaqti",
@@ -70,6 +57,20 @@ const Rooms = () => {
         );
       },
     },
+
+    {
+      id: "wifi",
+      label: "WI-FI",
+    },
+    {
+      id: "monitor",
+      label: "Monitor",
+    },
+    {
+      id: "blackboard",
+      label: "Blackboard",
+    },
+
     {
       id: "action",
       label: "",
