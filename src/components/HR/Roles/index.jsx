@@ -19,58 +19,8 @@ const Roles = () => {
   //   e.stopPropagation();
   // };
   const headCells = [
-    {
-      id: "rooms",
-      label: "Xona",
-    },
-    {
-      id: "capcity",
-      label: "O'rinlar soni",
-    },
-    {
-      id: "freetime",
-      label: "Bo'sh vaqti",
-      render: ({ freetime }) => {
-        return (
-          <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            {freetime?.map((val) => {
-              return (
-                <span
-                  style={{
-                    backgroundColor: "whitesmoke",
-                    padding: "5px 8px",
-                    borderRadius: "4px",
-                  }}
-                  key={val}
-                >
-                  {val}
-                </span>
-              );
-            })}
-          </span>
-        );
-      },
-    },
-
-    {
-      id: "wifi",
-      label: "WI-FI",
-    },
-    {
-      id: "monitor",
-      label: "Monitor",
-    },
-    {
-      id: "blackboard",
-      label: "Blackboard",
-    },
-
+    { id: "daraja", label: "Daraja" },
+    { id: "izoh", label: "Daraja izohi" },
     {
       id: "action",
       label: "",
@@ -88,30 +38,18 @@ const Roles = () => {
   const rows = [
     {
       id: 1,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      daraja: "O'qtuvchi",
+      izoh: "Frontend o'qituvchi",
     },
     {
       id: 2,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      daraja: "Adminstrator",
+      izoh: "Uch ta filialni boshqaradi",
     },
     {
       id: 3,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      daraja: "Adminstrator",
+      izoh: "Uch ta filialni boshqaradi",
     },
   ];
   // const data = [
@@ -149,7 +87,7 @@ const Roles = () => {
           Filter
         </GenericButton> */}
         <GenericButton onClick={onToggleModal} type="add">
-          Xona qo&apos;shish
+          Ro&apos;l qo&apos;shish
         </GenericButton>
       </BreadCrump>
       <GenericTable

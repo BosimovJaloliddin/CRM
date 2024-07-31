@@ -3,6 +3,7 @@ import GenericInput from "../../Generic/Input";
 import Modal from "../../Generic/Modal";
 import GenericSelect from "../../Generic/Select";
 import Subtitle from "../../Generic/Subtitle";
+import { Devider, Section } from "./style";
 
 const AllLidsModal = (props) => {
   const { data } = props;
@@ -20,39 +21,63 @@ const AllLidsModal = (props) => {
     <Modal {...props}>
       {/* full name */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Studentning ismi
+        Ism
       </Subtitle>
       <GenericInput value={data?.name} fontWeight={500} width={500} />
 
-      {/* Yo'nalish */}
+      {/* Familiya */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Yo&apos;nalishni tanlang
+        Familiya
       </Subtitle>
-      <GenericSelect data={selectData} value={data?.group} width="100%" />
+      <GenericInput value={data?.name} fontWeight={500} width={500} />
 
-      {/* Daraja */}
+      {/* Telefon raqami */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Darajangizni tanlang
+        Telefon raqami
       </Subtitle>
-      <GenericSelect data={selectData} value={data?.level} width="100%" />
+      <GenericInput value={data?.name} fontWeight={500} width={500} />
 
-      {/* kun */}
+      {/* Jinsi */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Kunni tanlang
+        Jinsi
       </Subtitle>
       <GenericSelect data={selectData} value={data?.days} width="100%" />
 
-      {/* kelish sanasi */}
+      {/* Tug'ilgan sanasi */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Boshlash sanasini tanlang
+        Tug&apos;ilgan sanasi
+      </Subtitle>
+      <GenericSelect data={selectData} value={data?.days} width="100%" />
+
+      {/* Vazifasi */}
+      <Subtitle mt={16} mb={8} color="#929FAF">
+        O&apos;qituvchini tanlang
       </Subtitle>
       <GenericSelect data={selectData} value={data?.date} width="100%" />
 
-      {/* Izoh */}
+      {/* Foiz */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Izoh
+        Foizni tanlang
       </Subtitle>
-      <GenericInput fontWeight={500} width={500} />
+      <GenericSelect data={selectData} value={data?.date} width="100%" />
+
+      <Devider>
+        <Devider.Filiallar>
+          <Devider.Title>Filiallar</Devider.Title>
+          <Section>- Chilonzor</Section>
+          <Section>- Chilonzor</Section>
+          <Section>- Chilonzor</Section>
+          <Section>- Chilonzor</Section>
+          <Section>- Chilonzor</Section>
+        </Devider.Filiallar>
+        <Devider.Role>
+          <Devider.Title>Rollar</Devider.Title>
+          <GenericSelect data={selectData} value={data?.date} width="100%" />
+          <GenericSelect data={selectData} value={data?.date} width="100%" />
+          <GenericSelect data={selectData} value={data?.date} width="100%" />
+          <GenericSelect data={selectData} value={data?.date} width="100%" />
+        </Devider.Role>
+      </Devider>
     </Modal>
   );
 };

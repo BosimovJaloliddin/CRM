@@ -33,4 +33,37 @@ Action.Delete = styled(del)`
   ${action}
 `;
 
-export { Container, Action };
+//
+const Devider = styled.div`
+  display: flex;
+  margin-top: 16px;
+`;
+Devider.Role = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+Devider.Filiallar = styled.div`
+  flex: 1;
+`;
+
+Devider.Title = styled.div`
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #253e5f80;
+`;
+const Section = styled.div`
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  margin: 12px 0;
+  color: #253e5f;
+`;
+
+export { Container, Action, Devider, Section };

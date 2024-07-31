@@ -19,58 +19,12 @@ const Hodimlar = () => {
   //   e.stopPropagation();
   // };
   const headCells = [
-    {
-      id: "rooms",
-      label: "Xona",
-    },
-    {
-      id: "capcity",
-      label: "O'rinlar soni",
-    },
-    {
-      id: "freetime",
-      label: "Bo'sh vaqti",
-      render: ({ freetime }) => {
-        return (
-          <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            {freetime?.map((val) => {
-              return (
-                <span
-                  style={{
-                    backgroundColor: "whitesmoke",
-                    padding: "5px 8px",
-                    borderRadius: "4px",
-                  }}
-                  key={val}
-                >
-                  {val}
-                </span>
-              );
-            })}
-          </span>
-        );
-      },
-    },
-
-    {
-      id: "wifi",
-      label: "WI-FI",
-    },
-    {
-      id: "monitor",
-      label: "Monitor",
-    },
-    {
-      id: "blackboard",
-      label: "Blackboard",
-    },
-
+    { id: "name", label: "To'liq isim" },
+    { id: "birthDate", label: "Tug'ilgan sanasi" },
+    { id: "jinsi", label: "Jinsi" },
+    { id: "role", label: "Vazifasi" },
+    { id: "tel", label: "Telefon raqam" },
+    { id: "filial", label: "Filial" },
     {
       id: "action",
       label: "",
@@ -88,30 +42,30 @@ const Hodimlar = () => {
   const rows = [
     {
       id: 1,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      name: "Holid Toshmatov",
+      birthDate: "12.02.1997",
+      jinsi: "erkak",
+      role: "O'qituvchi",
+      tel: "+998 99 479 1909",
+      filial: "Sirdaryo, Guliston",
     },
     {
       id: 2,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      name: "Nodit Toshmatov",
+      birthDate: "12.02.1992",
+      jinsi: "erkak",
+      role: "O'qituvchi",
+      tel: "+998 99 479 1909",
+      filial: "Chilonzor",
     },
     {
       id: 3,
-      rooms: "Frontend",
-      capcity: "20",
-      freetime: ["12:00~17:00", "20:00"],
-      wifi: "Bor",
-      monitor: "Bor",
-      blackboard: "Bor",
+      name: "Nemat Holmatov",
+      birthDate: "12.02.1995",
+      jinsi: "erkak",
+      role: "O'qituvchi",
+      tel: "+998 99 479 1909",
+      filial: "Yunusabod",
     },
   ];
   // const data = [
@@ -149,7 +103,7 @@ const Hodimlar = () => {
           Filter
         </GenericButton> */}
         <GenericButton onClick={onToggleModal} type="add">
-          Xona qo&apos;shish
+          Hodim qo&apos;shish
         </GenericButton>
       </BreadCrump>
       <GenericTable
