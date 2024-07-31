@@ -62,7 +62,7 @@ const Section = styled.div`
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-  margin: 12px 0;
+  /* margin: 12px 0; */
   color: #253e5f;
 `;
 

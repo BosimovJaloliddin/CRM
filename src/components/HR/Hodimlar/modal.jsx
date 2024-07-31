@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Checkbox } from "@mui/material";
 import GenericInput from "../../Generic/Input";
 import Modal from "../../Generic/Modal";
 import GenericSelect from "../../Generic/Select";
@@ -64,11 +65,21 @@ const AllLidsModal = (props) => {
       <Devider>
         <Devider.Filiallar>
           <Devider.Title>Filiallar</Devider.Title>
-          <Section>- Chilonzor</Section>
-          <Section>- Chilonzor</Section>
-          <Section>- Chilonzor</Section>
-          <Section>- Chilonzor</Section>
-          <Section>- Chilonzor</Section>
+          <Section>
+            <Checkbox /> Chilonzor
+          </Section>
+          <Section>
+            <Checkbox /> Chilonzor
+          </Section>
+          <Section>
+            <Checkbox /> Chilonzor
+          </Section>
+          <Section>
+            <Checkbox /> Chilonzor
+          </Section>
+          <Section>
+            <Checkbox /> Chilonzor
+          </Section>
         </Devider.Filiallar>
         <Devider.Role>
           <Devider.Title>Rollar</Devider.Title>
