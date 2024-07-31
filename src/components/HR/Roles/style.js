@@ -33,4 +33,32 @@ Action.Delete = styled(del)`
   ${action}
 `;
 
-export { Container, Action };
+// MODAL
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  margin-top: 16px;
+`;
+const Box = styled.div`
+  margin-top: 16px;
+`;
+const RoleTitle = styled.div`
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #253e5f80;
+`;
+const Section = styled.div`
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  margin-top: 12px;
+  color: var(--primaryColor);
+`;
+
+export { Container, Action, Wrapper, Box, RoleTitle, Section };

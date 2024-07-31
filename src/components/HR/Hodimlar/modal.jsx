@@ -66,19 +66,19 @@ const AllLidsModal = (props) => {
         <Devider.Filiallar>
           <Devider.Title>Filiallar</Devider.Title>
           <Section>
-            <Checkbox /> Chilonzor
+            <Checkbox sx={{ padding: 0 }} /> Chilonzor
           </Section>
           <Section>
-            <Checkbox /> Chilonzor
+            <Checkbox sx={{ padding: 0 }} /> Chilonzor
           </Section>
           <Section>
-            <Checkbox /> Chilonzor
+            <Checkbox sx={{ padding: 0 }} /> Chilonzor
           </Section>
           <Section>
-            <Checkbox /> Chilonzor
+            <Checkbox sx={{ padding: 0 }} /> Chilonzor
           </Section>
           <Section>
-            <Checkbox /> Chilonzor
+            <Checkbox sx={{ padding: 0 }} /> Chilonzor
           </Section>
         </Devider.Filiallar>
         <Devider.Role>

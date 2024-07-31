@@ -1,58 +1,61 @@
 /* eslint-disable react/prop-types */
+import { Checkbox } from "@mui/material";
+import { roles } from "../../../mock/roles";
 import GenericInput from "../../Generic/Input";
 import Modal from "../../Generic/Modal";
-import GenericSelect from "../../Generic/Select";
+// import GenericSelect from "../../Generic/Select";
 import Subtitle from "../../Generic/Subtitle";
+import { Box, RoleTitle, Section, Wrapper } from "./style";
 
 const AllLidsModal = (props) => {
   const { data } = props;
-  const selectData = data && [
-    {
-      value: "Front",
-      title: "Frontend",
-    },
-    {
-      value: "Beckend",
-      title: "Beckend",
-    },
-  ];
+  // const selectData = data && [
+  //   {
+  //     value: "Front",
+  //     title: "Frontend",
+  //   },
+  //   {
+  //     value: "Beckend",
+  //     title: "Beckend",
+  //   },
+  // ];
   return (
     <Modal {...props}>
-      {/* full name */}
+      {/* Darajasi */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Studentning ismi
+        Darajasi
       </Subtitle>
       <GenericInput value={data?.name} fontWeight={500} width={500} />
 
-      {/* Yo'nalish */}
+      {/* Daraja izohi */}
       <Subtitle mt={16} mb={8} color="#929FAF">
-        Yo&apos;nalishni tanlang
-      </Subtitle>
-      <GenericSelect data={selectData} value={data?.group} width="100%" />
-
-      {/* Daraja */}
-      <Subtitle mt={16} mb={8} color="#929FAF">
-        Darajangizni tanlang
-      </Subtitle>
-      <GenericSelect data={selectData} value={data?.level} width="100%" />
-
-      {/* kun */}
-      <Subtitle mt={16} mb={8} color="#929FAF">
-        Kunni tanlang
-      </Subtitle>
-      <GenericSelect data={selectData} value={data?.days} width="100%" />
-
-      {/* kelish sanasi */}
-      <Subtitle mt={16} mb={8} color="#929FAF">
-        Boshlash sanasini tanlang
-      </Subtitle>
-      <GenericSelect data={selectData} value={data?.date} width="100%" />
-
-      {/* Izoh */}
-      <Subtitle mt={16} mb={8} color="#929FAF">
-        Izoh
+        Daraja izohi
       </Subtitle>
       <GenericInput fontWeight={500} width={500} />
+
+      {/* Checkboxs */}
+      <Wrapper>
+        {roles.map(([title, role]) => {
+          return (
+            <Box key={title}>
+              <RoleTitle>{title}</RoleTitle>
+              {role.map(({ status, title }) => {
+                return (
+                  <Section key={title}>
+                    <Checkbox
+                      sx={{
+                        padding: 0,
+                      }}
+                      defaultChecked={status}
+                    />{" "}
+                    {title}
+                  </Section>
+                );
+              })}
+            </Box>
+          );
+        })}
+      </Wrapper>
     </Modal>
   );
 };
