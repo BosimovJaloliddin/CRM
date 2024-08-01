@@ -40,9 +40,7 @@ const Wrapper = styled.div`
   grid-gap: 12px;
   margin-top: 16px;
 `;
-const Box = styled.div`
-  margin-top: 16px;
-`;
+
 const RoleTitle = styled.div`
   font-family: "Montserrat";
   font-size: 16px;
@@ -52,7 +50,7 @@ const RoleTitle = styled.div`
   color: #253e5f80;
 `;
 const Section = styled.div`
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -61,4 +59,4 @@ const Section = styled.div`
   color: var(--primaryColor);
 `;
 
-export { Container, Action, Wrapper, Box, RoleTitle, Section };
+export { Container, Action, Wrapper, RoleTitle, Section };
