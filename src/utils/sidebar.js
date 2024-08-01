@@ -20,6 +20,8 @@ import GuruhlarView from "../view/Guruhlar/Guruhlar";
 import RoomsView from "../view/Guruhlar/Rooms";
 import RolesView from "../view/HR/Roles";
 import HodimlarView from "../view/HR/Hodimlar";
+import FieldsView from "../view/Kurslar/Fields";
+import GroupListView from "../view/Kurslar/GroupList";
 // import ScheduleView from "../view/Guruhlar/Archive";
 // import LidsAllView from "../views/LidsAll";
 // import FirstClassView from "../views/FirstClass";
@@ -194,7 +196,7 @@ const sidebar = [
         path: "/kurslar/all-kurslar",
         parentID: 6,
         isPrivate: true,
-        element: Generics,
+        element: GroupListView,
         role: ["admin", "manager"],
       },
       {
@@ -203,7 +205,7 @@ const sidebar = [
         title: "Yo'nalishlar",
         path: "/kurslar/yonalish",
         isPrivate: true,
-        element: Generics,
+        element: FieldsView,
         role: ["admin", "manager"],
       },
     ],

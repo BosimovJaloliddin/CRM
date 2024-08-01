@@ -45,3 +45,46 @@ export const students = [
     "06-07": "keldi",
   },
 ];
+
+export const studentGroup = [
+  {
+    id: 1,
+    group: "Frontend",
+    kurs: "JavaScript",
+    start: "15:00",
+    end: "19:00",
+    level: "Junior",
+    turi: "offline",
+    completed: true,
+  },
+  {
+    id: 2,
+    group: "Frontend",
+    kurs: "JavaScript",
+    start: "15:00",
+    end: "19:00",
+    level: "Junior",
+    turi: "offline",
+    completed: true,
+  },
+  {
+    id: 3,
+    group: "Frontend",
+    kurs: "JavaScript",
+    start: "15:00",
+    end: "19:00",
+    level: "Junior",
+    turi: "offline",
+    completed: false,
+  },
+  {
+    id: 4,
+    group: "Frontend",
+    kurs: "JavaScript",
+    start: "15:00",
+    end: "19:00",
+    level: "Junior",
+    turi: "offline",
+    completed: true,
+  },
+];
