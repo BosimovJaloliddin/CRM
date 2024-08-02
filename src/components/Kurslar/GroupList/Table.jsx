@@ -1,40 +1,23 @@
 /* eslint-disable react/prop-types */
 import * as React from "react";
-import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+import { Del, Edit, Status, TimelineWrapper, Title } from "./tableStyle";
 
-function createData(name, calories, fat, carbs, protein, price) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      {
-        date: "2020-01-05",
-        customerId: "11091700",
-        amount: 3,
-      },
-      {
-        date: "2020-01-02",
-        customerId: "Anonymous",
-        amount: 1,
-      },
-    ],
-  };
-}
+const styleCell = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "4px",
+  flex: 1,
+  border: 0,
+};
 
 function Row(props) {
   const { row } = props;
@@ -44,50 +27,87 @@ function Row(props) {
     <React.Fragment>
       <TableRow
         onClick={() => setOpen(!open)}
-        sx={{ "& > *": { borderBottom: "unset" }, cursor: "pointer" }}
+        sx={{
+          "& > *": { borderBottom: "unset" },
+          ":hover": { background: "#f8fafc", cursor: "pointer" },
+        }}
       >
         <TableCell
           component="th"
           scope="row"
           sx={{
+            display: "felx",
+            justifyContent: "space-between",
             color: "#253e5f",
-            fontWeight: 500,
-            fontSize: "16px",
-            ":hover": { background: "#f8fafc" },
+            fontWeight: 600,
+            fontSize: "18px",
+            border: 0,
           }}
         >
           {row.title}
+        </TableCell>
+        <TableCell sx={{ border: 0 }} align="right">
+          <Edit />
+          <Del />
         </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              {/* <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography> */}
+            <Box sx={{ margin: "8px 0" }}>
               <Table size="small" aria-label="purchases">
-                <TableHead>
+                {/* <TableHead>
                   <TableRow>
                     <TableCell>Location</TableCell>
                     <TableCell>Status</TableCell>
                     <TableCell align="right">Schedule</TableCell>
                     <TableCell align="right">action</TableCell>
                   </TableRow>
-                </TableHead>
+                </TableHead> */}
                 <TableBody>
-                  {row?.grops?.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.date}
-                      </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  {row?.grops?.map((rw) => {
+                    return (
+                      <TableRow
+                        key={rw.id}
+                        sx={{
+                          display: "flex",
+                          // justifyContent: "space-around",
+                          alignItems: "center",
+                          width: "100%",
+                          margin: "8px",
+                          padding: "10px",
+                          border: "1px solid #d8d9da",
+                          borderRadius: "8px",
+                        }}
+                      >
+                        <TableCell sx={styleCell}>
+                          <Title>{rw.level}</Title>
+                          <Status active={rw.started}>
+                            {rw.started ? "Active" : "Soon"}
+                          </Status>
+                        </TableCell>
+                        <TableCell sx={{ ...styleCell, flex: "2" }}>
+                          <Title>{rw.filial}</Title>
+                          <Title color={"#1890FF"}>{rw.location}</Title>
+                        </TableCell>
+                        <TableCell sx={{ ...styleCell, flex: "2", gap: "8px" }}>
+                          <TimelineWrapper>
+                            {rw.timeline.replaceAll(" ", " - ")}
+                          </TimelineWrapper>
+                          <TimelineWrapper time>{rw.time}</TimelineWrapper>
+                        </TableCell>
+                        <TableCell sx={{ ...styleCell, alignItems: "center" }}>
+                          <Title color="#BBC3CD">O&apos;qituvchilar</Title>
+                          <Title color="#929FAF">+2</Title>
+                        </TableCell>
+                        <TableCell sx={{ border: 0 }}>
+                          <Title>
+                            <Edit />
+                          </Title>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </Box>
@@ -113,10 +133,15 @@ export default function CollapsibleTable(props) {
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{ color: "#929faf", fontSize: "16px" }}>
+            <TableCell
+              sx={{
+                color: "#929faf",
+                fontSize: "16px",
+              }}
+            >
               Kurslar turi
             </TableCell>
-            {/* <TableCell align="right" /> */}
+            <TableCell align="right" />
           </TableRow>
         </TableHead>
         <TableBody>
