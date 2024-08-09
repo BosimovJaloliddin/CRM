@@ -9,7 +9,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Del, Edit, Status, TimelineWrapper, Title } from "./tableStyle";
+import CourseModal from "../CourseModal";
+import GenericButton from "../../../Generic/Button";
+import { Del, Edit, Status, TimelineWrapper, Title } from "./style";
 
 const styleCell = {
   display: "flex",
@@ -22,9 +24,24 @@ const styleCell = {
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+  const [openAdd, setOpenAdd] = React.useState(false);
+
+  const onAddKurs = (e) => {
+    e.stopPropagation();
+    setOpenAdd(!openAdd);
+
+    console.log("hellow");
+  };
+  const onSave = (e) => {
+    e.stopPropagation();
+
+    setOpenAdd(!openAdd);
+  };
 
   return (
     <React.Fragment>
+      <CourseModal open={openAdd} onClick={onAddKurs} onSave={onSave} />
+
       <TableRow
         onClick={() => setOpen(!open)}
         sx={{
@@ -46,8 +63,18 @@ function Row(props) {
         >
           {row.title}
         </TableCell>
-        <TableCell sx={{ border: 0 }} align="right">
-          <Edit />
+        <TableCell
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            border: 0,
+          }}
+          align="right"
+        >
+          <GenericButton onClick={onAddKurs} type="add"></GenericButton>
+          <Edit onClick={onAddKurs} />
           <Del />
         </TableCell>
       </TableRow>
@@ -127,10 +154,7 @@ function Row(props) {
 // ];
 
 export default function CollapsibleTable(props) {
-  const {
-    rows,
-    //  cells
-  } = props;
+  const { rows } = props;
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">

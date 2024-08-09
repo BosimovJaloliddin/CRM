@@ -1,11 +1,10 @@
 import { useState } from "react";
 import BreadCrump from "../../Generic/BreadCrump";
-import GenericTable from "../../Generic/Table";
-import GenericButton from "../../Generic/Button";
-import AllLidsModal from "./modal";
 import CollapsibleTable from "./Table";
+import GenericButton from "../../Generic/Button";
 import { rows } from "../../../mock/groups";
 import { Action, Container } from "./style";
+import GroupModal from "./GroupModal";
 
 const GroupList = () => {
   // const [open, setOpen] = useState(true);
@@ -43,7 +42,7 @@ const GroupList = () => {
   return (
     <Container>
       <BreadCrump>
-        <AllLidsModal
+        <GroupModal
           open={modalOpen}
           onClose={onToggleModal}
           onSave={onSave}
@@ -51,7 +50,7 @@ const GroupList = () => {
         />
 
         <GenericButton onClick={onToggleModal} type="add">
-          Guruh qo&apos;shish
+          Lid qo&apos;shish
         </GenericButton>
       </BreadCrump>
       {/* <GenericTable

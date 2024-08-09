@@ -9,7 +9,7 @@ const Modal = (props) => {
     ? createPortal(
         <Container>
           <Wrapper>
-            <Title>Lid qo&apos;shish</Title>
+            {props?.title && <Title>Lid qo&apos;shish</Title>}
             {props?.children}
             <Footer>
               {props?.onClose && (

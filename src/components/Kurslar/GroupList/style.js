@@ -42,42 +42,92 @@ Action.Delete = styled(del)`
 `;
 
 // STATUS MODAL
-const ModalContainer = styled.div`
+// export const ModalContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   left: ${({ x }) => x && `${x}px`};
+//   top: ${({ y }) => y && `${y}px`};
+//   width: 200px;
+//   max-height: 200px;
+//   margin: 35px 0 0 -100px;
+//   background: white;
+//   border: 1px solid #f0f0f0;
+//   border-radius: 8px;
+// `;
+// const ArrowModal = styled.div`
+//   position: absolute;
+//   width: 32px;
+//   height: 32px;
+//   align-self: center;
+//   margin-top: -16px;
+//   transform: rotate(-45deg);
+//   border: 1px solid #f0f0f0;
+//   border-color: #f0f0f0 #f0f0f0 transparent transparent;
+//   background-color: white;
+// `;
+// const ModalBox = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+//   font-size: 16px;
+//   font-weight: 500;
+//   padding: 18px 15px;
+//   color: var(--primaryColor);
+
+//   &:hover {
+//     background-color: #f8fafc;
+//   }
+// `;
+
+export const Devider = styled.div`
+  display: flex;
+  margin-top: 16px;
+`;
+
+Devider.Role = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: ${({ x }) => x && `${x}px`};
-  top: ${({ y }) => y && `${y}px`};
-  width: 200px;
-  max-height: 200px;
-  margin: 35px 0 0 -100px;
-  background: white;
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-`;
-const ArrowModal = styled.div`
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  align-self: center;
-  margin-top: -16px;
-  transform: rotate(-45deg);
-  border: 1px solid #f0f0f0;
-  border-color: #f0f0f0 #f0f0f0 transparent transparent;
-  background-color: white;
-`;
-const ModalBox = styled.div`
-  display: flex;
-  align-items: center;
+  flex: 1;
   gap: 8px;
+  /*
+  border: 1px solid #91d5ff;
+   border-left: 0;
+  border-radius: 0px 8px 8px 0px; */
+`;
+Devider.Filiallar = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 8px;
+`;
+
+Devider.Title = styled.div`
+  font-family: Montserrat;
   font-size: 16px;
   font-weight: 500;
-  padding: 18px 15px;
-  color: var(--primaryColor);
-
-  &:hover {
-    background-color: #f8fafc;
-  }
+  line-height: 24px;
+  color: #253e5f80;
 `;
 
-export { Container, Action, Icon, ModalContainer, ArrowModal, ModalBox };
+export const Section = styled.div`
+  display: flex;
+  /* padding: 12px 0; */
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px 0 0 4px;
+  background-color: #f8fafc;
+  height: 40px;
+`;
+
+export const Input = styled.input`
+  height: 40px;
+  outline: none;
+  border: 1px solid #f0f0f0;
+  border-left: none;
+  border-radius: 0px 4px 4px 0px;
+  padding-left: 15px;
+`;
+
+export { Container, Action, Icon };
