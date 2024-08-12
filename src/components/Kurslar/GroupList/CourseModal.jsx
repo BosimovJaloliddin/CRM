@@ -5,6 +5,7 @@ import GenericInput from "../../Generic/Input";
 import Subtitle from "../../Generic/Subtitle";
 import GenericSelect from "../../Generic/Select";
 import Title from "../../Generic/Title";
+import MultipleSelect from "./Multiselect";
 // import MultipleSelect from "./Multiselect";
 
 export const CourseModal = (props) => {
@@ -26,6 +27,8 @@ export const CourseModal = (props) => {
         Hafta kunlari
       </Subtitle>
       {/* <MultipleSelect /> */}
+      <MultipleSelect />
+
       {/* full name */}
       <Subtitle mt={16} mb={8} color={"#929FAF"}>
         Boshlanish vaqti

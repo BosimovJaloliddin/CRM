@@ -53,7 +53,7 @@ const Logo = styled.div`
   background-color: white;
   border-bottom: 1px solid rgb(248, 250, 252, 1);
   cursor: pointer;
-  z-index: 999;
+  /* z-index: 99; */
 `;
 const LogOut = styled(Logo)`
   display: flex;

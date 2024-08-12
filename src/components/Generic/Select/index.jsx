@@ -18,7 +18,11 @@ const GenericSelect = (props) => {
       fullWidth
     >
       <Select
-        sx={{ color: "#253E5F", borderColor: "#929faf", fontSize: "14px" }}
+        sx={{
+          color: "#253E5F",
+          borderColor: "#929faf",
+          fontSize: "14px",
+        }}
         labelId="demo-simple-select-label"
         id="demo-simple-select"
         value={defaultVal || "Select"}

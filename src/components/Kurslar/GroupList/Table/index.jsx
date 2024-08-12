@@ -40,7 +40,7 @@ function Row(props) {
 
   return (
     <React.Fragment>
-      <CourseModal open={openAdd} onClick={onAddKurs} onSave={onSave} />
+      <CourseModal open={openAdd} onClose={onAddKurs} onSave={onSave} />
 
       <TableRow
         onClick={() => setOpen(!open)}

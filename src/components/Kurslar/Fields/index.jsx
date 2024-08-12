@@ -145,11 +145,9 @@ const Fields = () => {
           onSave={onSave}
           data={modalProps}
         />
-        {/* <GenericButton onClick={() => setOpen(!open)} type="filter">
-          Filter
-        </GenericButton> */}
+
         <GenericButton onClick={onToggleModal} type="add">
-          Xona qo&apos;shish
+          Yo&apos;nalish qo&apos;shish
         </GenericButton>
       </BreadCrump>
       <GenericTable
@@ -157,13 +155,7 @@ const Fields = () => {
         headCells={headCells}
         rows={rows}
         checkbox={false}
-      >
-        {/* <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} />
-        <GenericSelect data={data} /> */}
-      </GenericTable>
+      ></GenericTable>
     </Container>
   );
 };
