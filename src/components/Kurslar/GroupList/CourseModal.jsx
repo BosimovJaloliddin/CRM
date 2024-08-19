@@ -44,6 +44,7 @@ export const CourseModal = (props) => {
         Ustozlar
       </Subtitle>
       {/* <MultipleSelect /> */}
+      <MultipleSelect />
     </Modal>
   );
 };

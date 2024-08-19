@@ -45,7 +45,11 @@ export default function MultipleSelect() {
         multiple
         value={personName}
         onChange={handleChange}
-        style={{ height: "40px", width: "100%", maxWidth: "500px" }}
+        style={{
+          height: "40px",
+          width: "100%",
+          maxWidth: "500px",
+        }}
         renderValue={(selected) => (
           <Box
             sx={{
