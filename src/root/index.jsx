@@ -1,12 +1,30 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import sidebar from "../utils/sidebar";
 import Sidebar from "../components/Sidebar";
 import Checkin from "../components/Guruhlar/Guruhlar/Checkin";
+import UmumiySidebar from "../components/Sozlamalar/Umumiy/Sidebar";
+import sidebar from "../utils/sidebar";
+import { umumiy } from "../utils/sozlamalar";
 
 const Root = () => {
   return (
     <Routes>
+      {/* MAIN */}
       <Route element={<Sidebar />}>
+        {/* SOZLAMALAR */}
+        <Route element={<UmumiySidebar />}>
+          {umumiy.map((item) => {
+            const { element: Element, path, id } = item;
+            return (
+              <Route
+                key={id}
+                element={<Element />}
+                path={`sozlamalar/umumiy/${path}`}
+              />
+            );
+          })}
+        </Route>
+
+        {/* SIDEBAR*/}
         <Route path={"/guruhlar/guruhlar/checkin"} element={<Checkin />} />
         {sidebar.map((parent) => {
           const ParentElement = parent.element;
@@ -47,6 +65,10 @@ const Root = () => {
         );
       })}
       <Route path="/" element={<Navigate to={"/analitika"} />} />
+      <Route
+        path="/sozlamalar/umumiy/"
+        element={<Navigate to={"/sozlamalar/umumiy/check"} />}
+      />
       <Route path="*" element={<h1>NOT FOUND 404</h1>} />
     </Routes>
   );

@@ -10,7 +10,7 @@ const BreadCrump = (props) => {
   return location.pathname !== "/analitika" ? (
     <Container title={location?.state?.parent}>
       <Title>{location?.state?.parent}</Title>
-      {location.state.child ? (
+      {location.state?.child ? (
         <>
           <Arrow />
           <Subtitle>{location?.state?.child}</Subtitle>

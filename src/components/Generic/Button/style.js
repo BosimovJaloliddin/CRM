@@ -15,6 +15,10 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
+  width: ${({ width }) => width && `${width}px`};
+  height: ${({ height }) => height && `${height}px`};
+  margin-left: ${({ ml }) => ml && `auto`};
+  margin-top: ${({ mt }) => mt && `${mt}px`};
 
   font-family: Montserrat;
   font-size: 14px;
