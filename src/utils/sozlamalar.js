@@ -3,10 +3,13 @@ import filiallar from "../assets/icons/filiallar.svg?react";
 import xabarnomalar from "../assets/icons/xabarnomalar.svg?react";
 import status from "../assets/icons/status.svg?react";
 import sorovnomalar from "../assets/icons/sorovnomalar.svg?react";
+
+// COMPONENTS
+import CheckView from "../view/Sozlamalar/Chack";
 import { Generics } from "../view/Generic";
 
 export const umumiy = [
-  { id: 1, icon: check, element: Generics, path: "check", title: "Check" },
+  { id: 1, icon: check, element: CheckView, path: "check", title: "Check" },
   {
     id: 2,
     icon: filiallar,

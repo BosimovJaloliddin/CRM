@@ -16,7 +16,7 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin-left: 31px;
+  padding: 0 31px 31px 31px;
 `;
 export const Link = styled(NavLink)`
   display: flex;
