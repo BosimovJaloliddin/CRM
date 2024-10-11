@@ -22,7 +22,6 @@ const Check = () => {
       <ImgBox url={url}>
         <FileUpload onChange={getUrl} type="file" />
       </ImgBox>
-
       <Subtitle color="#929FAF" mb={8} mt={24}>
         Sarlavha
       </Subtitle>
