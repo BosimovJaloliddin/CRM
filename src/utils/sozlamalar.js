@@ -7,6 +7,7 @@ import sorovnomalar from "../assets/icons/sorovnomalar.svg?react";
 // COMPONENTS
 import CheckView from "../view/Sozlamalar/Chack";
 import FiliallarView from "../view/Sozlamalar/Filiallar";
+import XabarnomalarView from "../view/Sozlamalar/Xabarnomalar";
 import { Generics } from "../view/Generic";
 
 export const umumiy = [
@@ -21,7 +22,7 @@ export const umumiy = [
   {
     id: 3,
     icon: xabarnomalar,
-    element: Generics,
+    element: XabarnomalarView,
     path: "xabarnomalar",
     title: "Xabarnomalar",
   },
