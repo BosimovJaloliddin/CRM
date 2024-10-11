@@ -6,6 +6,7 @@ import sorovnomalar from "../assets/icons/sorovnomalar.svg?react";
 
 // COMPONENTS
 import CheckView from "../view/Sozlamalar/Chack";
+import FiliallarView from "../view/Sozlamalar/Filiallar";
 import { Generics } from "../view/Generic";
 
 export const umumiy = [
@@ -13,7 +14,7 @@ export const umumiy = [
   {
     id: 2,
     icon: filiallar,
-    element: Generics,
+    element: FiliallarView,
     path: "filiallar",
     title: "Filiallar",
   },
