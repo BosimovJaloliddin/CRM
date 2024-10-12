@@ -80,7 +80,7 @@ export const rows = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Fanlar",
     grops: [
       {
