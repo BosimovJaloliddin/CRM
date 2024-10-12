@@ -34,7 +34,7 @@ const DateCard = styled.div`
   margin: 2px;
 
   background-color: ${({ active }) =>
-    active ? "var(--activeColor)" : "white"};
+    active === "true" ? "var(--activeColor)" : "white"};
   border-radius: 24px;
   border: 1px solid #f0f0f0;
   cursor: pointer;

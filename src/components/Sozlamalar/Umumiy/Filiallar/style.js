@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Status = styled.a`
+export const StatusLoc = styled.a`
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;

@@ -50,7 +50,7 @@ const Sorovnomalar = () => {
       accepted: 230,
     },
     {
-      id: 2,
+      id: 3,
       sorovnoma: "Youtube",
       all: 100,
       accepted: 60,

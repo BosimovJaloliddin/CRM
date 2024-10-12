@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Status } from "./style";
 import GenericTable from "../../../Generic/Table";
+import { StatusLoc } from "./style";
 
 const Filiallar = () => {
   // const [url, setUrl] = useState({});
@@ -16,13 +16,11 @@ const Filiallar = () => {
       id: "location",
       label: "Manzil",
       align: "right",
-      render: (props) => {
-        return (
-          <Status href={props.href} target="_blank">
-            {props.location}
-          </Status>
-        );
-      },
+      render: (props) => (
+        <StatusLoc href={props?.href} target="_blank">
+          {props?.location}
+        </StatusLoc>
+      ),
     },
   ];
   const rows = [

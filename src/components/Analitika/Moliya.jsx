@@ -39,13 +39,13 @@ const Moliya = () => {
           return (
             <DateCard
               onClick={() => onClickDate(value)}
-              active={ac}
+              active={ac.toString()}
               key={value}
             >
-              <Subtitle color={ac && "white"} fs={14}>
+              <Subtitle color={ac ? "white" : undefined} fs={14}>
                 {weeks[value?.getDay()].short}
               </Subtitle>
-              <Subtitle color={ac && "white"} fs={14}>
+              <Subtitle color={ac ? "white" : undefined} fs={14}>
                 {value.getDate()}
               </Subtitle>
             </DateCard>
