@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { LocationGPS } from "./style";
+import { Status } from "./style";
 import GenericTable from "../../../Generic/Table";
 
 const Filiallar = () => {
@@ -18,9 +18,9 @@ const Filiallar = () => {
       align: "right",
       render: (props) => {
         return (
-          <LocationGPS href={props.href} target="_blank">
+          <Status href={props.href} target="_blank">
             {props.location}
-          </LocationGPS>
+          </Status>
         );
       },
     },
