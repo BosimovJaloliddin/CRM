@@ -9,7 +9,7 @@ import CheckView from "../view/Sozlamalar/Chack";
 import FiliallarView from "../view/Sozlamalar/Filiallar";
 import XabarnomalarView from "../view/Sozlamalar/Xabarnomalar";
 import SorovnomalarView from "../view/Sozlamalar/Sorovnomalar";
-import { Generics } from "../view/Generic";
+import CallConfigView from "../view/Sozlamalar/CallConfig";
 
 export const umumiy = [
   { id: 1, icon: check, element: CheckView, path: "check", title: "Check" },
@@ -37,7 +37,7 @@ export const umumiy = [
   {
     id: 5,
     icon: status,
-    element: Generics,
+    element: CallConfigView,
     path: "status",
     title: "Status",
   },
