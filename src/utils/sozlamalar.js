@@ -8,7 +8,8 @@ import sorovnomalar from "../assets/icons/sorovnomalar.svg?react";
 import CheckView from "../view/Sozlamalar/Chack";
 import FiliallarView from "../view/Sozlamalar/Filiallar";
 import XabarnomalarView from "../view/Sozlamalar/Xabarnomalar";
-import { Generics } from "../view/Generic";
+import SorovnomalarView from "../view/Sozlamalar/Sorovnomalar";
+import CallConfigView from "../view/Sozlamalar/CallConfig";
 
 export const umumiy = [
   { id: 1, icon: check, element: CheckView, path: "check", title: "Check" },
@@ -29,14 +30,14 @@ export const umumiy = [
   {
     id: 4,
     icon: sorovnomalar,
-    element: Generics,
+    element: SorovnomalarView,
     path: "sorovlar",
     title: "So'rovnoma",
   },
   {
     id: 5,
     icon: status,
-    element: Generics,
+    element: CallConfigView,
     path: "status",
     title: "Status",
   },

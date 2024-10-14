@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { LocationGPS } from "./style";
 import GenericTable from "../../../Generic/Table";
 
 const Filiallar = () => {
@@ -16,13 +15,20 @@ const Filiallar = () => {
       id: "location",
       label: "Manzil",
       align: "right",
-      render: (props) => {
-        return (
-          <LocationGPS href={props.href} target="_blank">
-            {props.location}
-          </LocationGPS>
-        );
-      },
+      render: (props) => (
+        <a
+          style={{
+            fontSize: "16px",
+            fontWeight: 500,
+            textAlign: "left",
+            color: "#1890ff",
+          }}
+          href={props?.href}
+          target="_blank"
+        >
+          {props?.location}
+        </a>
+      ),
     },
   ];
   const rows = [
