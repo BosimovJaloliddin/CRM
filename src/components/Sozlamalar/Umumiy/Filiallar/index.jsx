@@ -16,7 +16,16 @@ const Filiallar = () => {
       label: "Manzil",
       align: "right",
       render: (props) => (
-        <a href={props?.href} target="_blank">
+        <a
+          style={{
+            fontSize: "16px",
+            fontWeight: 500,
+            textAlign: "left",
+            color: "#1890ff",
+          }}
+          href={props?.href}
+          target="_blank"
+        >
           {props?.location}
         </a>
       ),
