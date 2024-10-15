@@ -65,10 +65,18 @@ const Root = () => {
         );
       })}
       <Route path="/" element={<Navigate to={"/analitika"} />} />
-      <Route
+      {/* <Route
         path="/sozlamalar/umumiy/"
-        element={<Navigate to={"/sozlamalar/umumiy/check"} />}
-      />
+        element={
+          <Navigate
+            to={"/sozlamalar/umumiy/check"}
+            state={{
+              parent: ["Sozlamalar", "Umumiy"],
+              child: ["Check"],
+            }}
+          />
+        }
+      /> */}
       <Route path="*" element={<h1>NOT FOUND 404</h1>} />
     </Routes>
   );

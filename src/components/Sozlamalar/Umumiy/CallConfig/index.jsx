@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import GenericTable from "../../../Generic/Table";
+import GenericButton from "../../../Generic/Button";
+import BreadCrump from "../../BreadCrump";
+import CallConfigModal from "./modal";
 
 const CallConfig = () => {
-  const [open] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const cells = [
     {
@@ -46,14 +49,27 @@ const CallConfig = () => {
       color: "#eb0f0f",
     },
   ];
+  const onSave = () => {
+    setOpen(false);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <GenericTable
-      checkbox={false}
-      open={open}
-      headCells={cells}
-      rows={rows}
-    ></GenericTable>
+    <>
+      <CallConfigModal open={open} onClose={onClose} onSave={onSave} />
+      <BreadCrump>
+        <GenericButton onClick={() => setOpen(true)} type="add">
+          Rang qo&apos;shish
+        </GenericButton>
+      </BreadCrump>
+      <GenericTable
+        checkbox={false}
+        headCells={cells}
+        rows={rows}
+      ></GenericTable>
+    </>
   );
 };
 

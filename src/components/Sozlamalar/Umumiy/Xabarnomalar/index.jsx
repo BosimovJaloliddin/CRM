@@ -3,6 +3,7 @@ import { useState } from "react";
 import GenericTable from "../../../Generic/Table";
 import { TimeWrap } from "./style";
 import { Switch } from "@mui/material";
+import BreadCrump from "../../BreadCrump";
 
 const Xabarnomalar = () => {
   // const [url, setUrl] = useState({});
@@ -51,12 +52,15 @@ const Xabarnomalar = () => {
   ];
 
   return (
-    <GenericTable
-      checkbox={false}
-      open={open}
-      headCells={cells}
-      rows={rows}
-    ></GenericTable>
+    <>
+      <BreadCrump />
+      <GenericTable
+        checkbox={false}
+        open={open}
+        headCells={cells}
+        rows={rows}
+      ></GenericTable>
+    </>
   );
 };
 

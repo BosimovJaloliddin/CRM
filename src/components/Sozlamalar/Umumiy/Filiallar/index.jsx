@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import GenericTable from "../../../Generic/Table";
+import BreadCrump from "../../BreadCrump";
+import GenericButton from "../../../Generic/Button";
+import FiliallarModal from "./modal";
 
 const Filiallar = () => {
   // const [url, setUrl] = useState({});
-  const [open] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const cells = [
     {
@@ -46,13 +49,27 @@ const Filiallar = () => {
     },
   ];
 
+  const onSave = () => {
+    setOpen(false);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <GenericTable
-      checkbox={false}
-      open={open}
-      headCells={cells}
-      rows={rows}
-    ></GenericTable>
+    <>
+      <FiliallarModal open={open} onClose={onClose} onSave={onSave} />
+      <BreadCrump>
+        <GenericButton onClick={() => setOpen(true)} type="add">
+          Filial qo&apos;shish
+        </GenericButton>
+      </BreadCrump>
+      <GenericTable
+        checkbox={false}
+        headCells={cells}
+        rows={rows}
+      ></GenericTable>
+    </>
   );
 };
 

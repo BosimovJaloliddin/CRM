@@ -1,13 +1,11 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { umumiy } from "../../../../utils/sozlamalar";
-import BreadCrump from "../../../Generic/BreadCrump";
 import { Body, Container, Link, Sidebar, Wrapper } from "./style";
 
 const UmumiySidebar = () => {
   const location = useLocation();
   return (
     <Container>
-      <BreadCrump />
       <Wrapper>
         <Sidebar>
           {umumiy?.map((item) => {
@@ -16,7 +14,8 @@ const UmumiySidebar = () => {
             return (
               <Link
                 key={item.id}
-                to={`/sozlamalar/umumiy/${item.path}`}
+                to={{ pathname: `/sozlamalar/umumiy/${item.path}` }}
+                state={{ parent: ["Sozlamalar", "Umumiy"], child: item.path }}
                 active={active}
               >
                 <Icon className="sub-icon" /> {item.title}

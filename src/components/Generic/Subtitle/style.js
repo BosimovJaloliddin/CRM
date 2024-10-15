@@ -7,6 +7,7 @@ const Container = styled.div`
   font-family: Montserrat;
   line-height: 24px;
   font-weight: 500;
+  text-transform: capitalize;
   color: ${({ color }) => (color ? color : "var(--primaryColor)")};
   font-size: ${({ fs }) => getValue(fs, "16px")};
   margin-top: ${({ mt }) => getValue(mt)};
